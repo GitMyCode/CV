@@ -1,0 +1,334 @@
+% Exemple de CV utilisant la classe moderncv
+% Style casual en orange
+% Article complet : http://blog.madrzejewski.com/creer-cv-elegant-latex-moderncv/
+
+\documentclass[a4paper,10pt]{extarticle}
+
+%\usepackage{fourier-orns} \Huge\hrulefill\hspace{0.2cm} \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
+%\usepackage{fancyhdr} \pagestyle{fancy}  \lhead{\hrule \vbox to 10pt{\vrule height 05pt width 1pt} LEFT}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\inputencoding{latin1} % important pour les carathere francais
+
+\usepackage[left=1cm,right=1.5cm,top=1.5cm,bottom=0.5cm]{geometry}
+%\usepackage[top=2.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
+
+% Largeur de la colonne pour les dates
+%A Few Useful Packages
+%\usepackage{marvosym}\textsc{\textsc{}}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+%\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{ifthen} % pour les ifthenelse
+\usepackage{pbox} % pour faire un \\ dans une cellule
+\usepackage{setspace} % pour les begin{spacing}{0/7}
+
+\usepackage{mathptmx}
+%\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+
+%-----------Font
+
+
+\AtBeginDocument{\def\labelitemi{$\bullet$}} %pour redefinir les bulletlist
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+%----------------------------------------------
+
+\usepackage{enumitem}
+
+\titleformat{\section}{\Large\mdseries\upshape}{}{0em}{}[\titlerule]
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+
+%------------Definition de column custom-------------
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering}p{#1}}
+\newcolumntype{L}[1]{>{\raggedleft}p{#1}}
+\newcolumntype{R}[1]{>{\raggedright}p{#1}}
+%------------             FIN           -------------
+
+
+\newcommand{\cventry}[7][.25em]{}
+\renewcommand{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries #3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    .\strut%
+    \if x& #7 &%
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small #7 \end{minipage}}\fi}}
+
+% colors
+%-------
+\definecolor{color0}{rgb}{0,0,0}% main default color, normally left to black
+\definecolor{color1}{rgb}{0,0,0}% primary scheme color
+\definecolor{color2}{rgb}{0,0,0}% secondary scheme color
+\definecolor{color3}{rgb}{0,0,0}% tertiary scheme color
+
+%lengths width
+\newlength{\indicewidth}%
+\setlength{\indicewidth}{0.13\textwidth}%45pt0.175\textwidth
+\newlength{\separatorcolumnwidth}%
+\setlength{\separatorcolumnwidth}{0.025\textwidth}%
+\newlength{\maincolumnwidth}%
+\setlength{\maincolumnwidth}{0.84\textwidth}%
+\newlength{\spacecvline}%
+\setlength{\spacecvline}{0.85em}
+%-----------FIN def lenght
+
+
+% Styles
+\newcommand{\hintfont}{}
+\newcommand{\indicestyle}[1]{\slshape\textcolor{color0}{#1}}
+
+
+\renewcommand{\labelitemii}{\small$\blacksquare$} 
+%%%%%%%%%%%%%% NEW COMANDE %%%%%%%%%%%%%%
+
+
+%CVITEM----------------------------------
+\newcommand{\cvitem}[3][\spacecvline]{
+\noindent\begin{tabular}
+{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth}@{}}
+	\raggedleft{\emph{#2}} &{#3}%
+\end{tabular}%
+\vspace{-1em}\par\addvspace{#1}  }
+
+
+%CVDOUBLEITEM-----------------------------
+\newcommand{\cvdoubleitem}[5][\spacecvline]{%
+ \cvitem[#1]{\rmfamily \scshape #2}{%
+   \begin{minipage}[t]{0.4\linewidth}#3\end{minipage}%
+   %
+   \begin{minipage}[t]{\indicewidth}\rmfamily \scshape\raggedleft{#4}\end{minipage}%
+   \hspace*{\separatorcolumnwidth}
+   \begin{minipage}[t]{0.4\linewidth}#5\end{minipage}}}
+
+
+%CVENTRE----------------------------------
+\newcommand{\cventre}[6][\spacecvline]{
+\cvitem[#1]{#2}{
+	{\bfseries #3}%
+	\ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}\strut%
+	\ifx&#5&
+	    \else{\vspace{-0.1em}\newline{}\begin{minipage}[t]{\linewidth}\begin{spacing}{0.8}\small #5 \end{spacing} \end{minipage}}\fi
+	\ifx&#6&
+	    \else{\vspace{-0.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}\fi
+}}
+
+%SUBSECTION----------------------------------
+\def\middleline{
+\raisebox{0.35em}{\line(1,0){50}}
+}
+
+\renewcommand{\subsection}[1]{
+\par\addvspace{3ex}
+\begin{tabular}{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft\indicestyle{}\middleline & { \strut\bfseries {#1} }%
+    \par
+\end{tabular}%
+\vspace{-0.5em}
+}
+
+
+
+\long\def\/*#1*/{}
+\usepackage{pdfpages}
+
+
+%%%%%%%%%%%%%%  FIN New COMANDE  %%%%%%%%%%%%%% 
+
+ \renewcommand\familydefault{\sfdefault}
+
+
+
+%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+\begin{document}
+
+
+
+\begin{table}[ht]
+\begin{minipage}[b]{0.74\textwidth}
+\begin{tabular}{l}
+
+\fontsize{43}{36}\textsf{Martin Bouchard}%
+ \vspace{0.6em}\\\LARGE{\textit{  Étudiant en Informatique}}
+\end{tabular}
+\end{minipage}
+\hspace{0.5cm}
+\noindent
+\begin{minipage}[b]{0.25\textwidth}\raggedright
+\begin{tabular}{|r}
+\\
+  \textit{4449 rue Adam}  \\
+   \textit{Montréal H1V 1T7}\\ 
+  \textit{marbouchl@gmail.com} \\
+   \textit{438 888 9741}  
+\end{tabular}
+\end{minipage}
+\end{table}
+
+
+\section{Sommaire}
+{Informaticien en génie logiciel de formation, j'ai aussi des connaissances dans  le domaine des arts visuels et de la criminologie. En dehors de mes cours, j'ai développé des compétences pour le python, le developpement android et la programmation web (front-end/back-end).}
+\vspace{-1em}
+\section{Formation}
+
+\cventre{2011-2014}{Baccalauréat informatique}{Université du Québec à Montréal}{}{}
+\cventre{2010}{Certificat en Criminologie}{ Université de Montréal}{}{}
+
+\cventre{2008}{Attestation Études Cinématographiques}{École de Cinéma et de télévision de Québec}{}{}
+
+
+
+\section{Expérience Professionnelle}
+
+\cventre[1.3em]{2013}{Stagiaire}
+{Ville de Montréal}
+{Conception d'applications d'affaires sur la plateforme de developpement web Apex de Oracle.}
+{$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end(Apex) de page web \\$\bullet$ Conception de schema bd  $\bullet$ Intégration avec LDAP $\bullet$ Architecture d'application sous forme de service}
+
+
+\cventre[1.3em]{2012}{Développeur}
+{Fasken Martineau DuMoulin, S.E.N.C.R.L}
+{Programmation de templates avec l'API de XpressDox. Cette API s'intègre avec Microsoft Word et automatise la génération de document. J'étais le seul qui s'avais utiliser Xpressdox dans l'entreprise.}
+{$\bullet$ Développer un framework $\bullet$ Proposer des solutions techniques aux besoins des avocats \newline{} $\bullet$ Trouver des solutions à des problèmes sans ressource}
+ 
+
+\cventre[0.5em]{2011}{Commis-Archive}{Agence des Services Frontaliers du Canada.}{Gestion des dossiers dans les archives des services frontalier}
+
+\section{Compétence Informatique}
+
+
+\cvdoubleitem{programmation:}{Java, Python, C/C++, Assembleur, BASH}
+			 { web:}{HTML/css/php/javascript, jQuery Mobile}
+\cvdoubleitem{cms:}
+			 {Apex, Django, Wordpress}{system:}{Windows, Linux}
+\cvdoubleitem{bd:}{MySQL, Oracle, SQL, PL/SQL}{génie:}{UML, Design Patterns, Agile, Git}
+
+\/*
+\begin{tabular}{ll}
+\textbf{Langages} & 
+html/css/php/javascript, jQuery Mobile, Apex, PL/SQL, C/C++, Java, Bash, Python,    Latex, Assembleur  \\
+\textbf{Génie} &
+UML, Design Patterns\\
+\textbf{BD} & MySQL, Oracle \\
+\textbf{CMS} & WordPress, Django \\
+\textbf{Systèmes} & Windows, Linux \\
+\textbf{IDE} & Eclipse, vim, SublimeText, Photoshop
+\end{tabular}
+*/
+
+
+
+\section{Travaux Pratiques}
+\begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
+						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
+\centering\textbf{\underline{Langage}} &\centering\textbf{\underline{Description}}
+\end{tabular*}
+\\\\
+\begin{tabular*}{\linewidth}{p{\dimexpr 0.13\linewidth-1\tabcolsep }
+						 	 p{\dimexpr 0.78\linewidth-1\tabcolsep }} 
+						 	 
+\textbf{Java} &  \vspace{-0.5em}
+\begin{itemize}
+
+\item Système de gestion d'employés et d'horaires. Modélisation orientée objet et héritage multiple
+\item Programmes Java utilisant  JPA et JDBC 
+\end{itemize}
+\\
+\textbf{C++} & \vspace{-0.5em}
+
+\begin{itemize}
+\item Jeu de \emph{snake}
+\item Système interrogable prenant en input des données de location de personnes. Le temps d'éxécution du programme devait être optimisé. Implentation d'un Arbre-map
+\item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
+\end{itemize}
+\\
+\textbf{C} & \vspace{-0.5em}
+
+\begin{itemize}
+\item Implémentation des fonctionnalités de la commande \emph{find} d'Unix
+\item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
+\end{itemize}
+
+
+\end{tabular*}
+
+
+
+\section{Réalisation Technique}
+
+%\begin{itemize}\addtolength{\itemsep}{-.35\baselineskip}  
+%\item yo \item un autre
+%\end{itemize}
+\begin{tabular*}{\linewidth}{  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   } 
+$\bullet$ \textbf{Site web}, \textsl{en construction} \par  \href{www.courspiano.ca}{www.courspiano.ca} 
+
+&$\bullet$ \textbf{Site web}, \textsl{en construction} \par \small\href{http://coursmusique.codefaction.webfactional.com}{coursmusique.codefaction.webfactional.com}
+&$\bullet$ \textbf{Encefal}, \textsl{projet en collaboration} \par \href{http://foireauxlivres.uqam.ca/}{http://foireauxlivres.uqam.ca/} \tabularnewline \\
+
+
+\vspace{-1.4em}Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress
+& \vspace{-1.5em} Un site designé sur photoshop et transposé en html/css. Le back-end est fait sur la plateforme Django  
+&\vspace{-1.5em} La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants. La plateforme est Django. 
+\tabularnewline \\
+
+$\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} \par \small \href{https://class.coursera.org/android-001}{https://class.coursera.org/android-001}
+
+
+&$\bullet$ \textbf{Algorithms, Part I} \par \small \href{https://class.coursera.org/algs4partI-004}{https://class.coursera.org/algs4partI-004} 
+
+
+& \tabularnewline \\
+\vspace{-1.5em} Je suis présentement un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org
+
+& \vspace{-1.5em} Je suis présentement un cours sur les algorithmes et structures de données fondamentaux. C'est un cours en ligne donné par l'Université de Princeton via le site coursera.org
+
+
+
+\end{tabular*}   
+\section{Autres}
+\subsection{Activité}
+\begin{itemize}
+
+\item[$\bullet$]Bénévolat au CSJR (Centre de Service de Justice Reparatrice)
+\item Bénévolat comme caméraman à Télémag
+\end{itemize}
+\subsection{Langue}
+\begin{itemize}
+\item[$\bullet$] Français langue maternelle 
+\item Anglais fonctionnel
+\end{itemize}
+
+\subsection{Intérêt}
+\begin{itemize}
+\item Graphisme: Grand intérêt pour le design web.
+\item Programmation: Toujours à la recherche de projets intéressants!
+\end{itemize}
+
+%\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
+\end{document}
