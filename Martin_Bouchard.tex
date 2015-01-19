@@ -6,7 +6,7 @@
 
 %\usepackage{fourier-orns} \Huge\hrulefill\hspace{0.2cm} \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
 %\usepackage{fancyhdr} \pagestyle{fancy}  \lhead{\hrule \vbox to 10pt{\vrule height 05pt width 1pt} LEFT}
-
+\usepackage{comment}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \inputencoding{latin1} % important pour les carathere francais
@@ -149,6 +149,38 @@
 \newcommand{\cvdetaillist}[3][.25em]{}
 \renewcommand{\cvdetaillist}[3][.25em]{%
   \cvdetailitem[#1]{#2}{#3}}
+
+
+
+%CVBOXITEM--------------------------------
+\newcommand{\cvboxitem}[4]{}
+\renewcommand{\cvboxitem}[4]{%
+	\begin{minipage}[t]{\linewidth}
+	$\bullet$ \textbf{#1}, \textsl{#2}\par
+	\href{#3}{#3}\vspace{1em}\\
+	{#4}
+	\end{minipage}
+	
+}
+  
+
+%CVTRIPLEBOX------------------------------
+\def\cvtripleboxutil#1#2#3#4{
+\cvboxitem{#1}{#2}{#3}{#4}
+}
+%CVTRIPLEBOX------------------------------
+\newcommand{\cvtriplebox}[3]{}
+\renewcommand{\cvtriplebox}[3]{
+\begin{tabular*}{\linewidth}{  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   } 
+{#1}&{#2}&{#3}\tabularnewline
+\end{tabular*}
+}
+
+
 
 
 
@@ -377,9 +409,6 @@ $\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} 
 \item Graphisme: Grand intérêt pour le design web.
 \item Programmation: Toujours à la recherche de projets intéressants!
 \end{itemize}
-
-
-
 
 
 
