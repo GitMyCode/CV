@@ -156,8 +156,9 @@
 \newcommand{\cvboxitem}[4]{}
 \renewcommand{\cvboxitem}[4]{%
 	\begin{minipage}[t]{\linewidth}
-	$\bullet$ \textbf{#1}, \textsl{#2}\par
-	\href{#3}{#3}\vspace{1em}\\
+	$\bullet$ \textbf{#1}
+	\ifthenelse{\equal{#2}{}}{}{, {\slshape #2}}\par%	
+	\raggedright{\scriptsize\href{#3}{#3}}\vspace{1em}\\
 	{#4}
 	\end{minipage}
 	
@@ -308,7 +309,7 @@ UML, Design Patterns\\
 
 
 
-\section{Travaux Pratiques \small (École)}
+\section{Travail Pratique \small (École)}
 \begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
 						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
 \centering\textbf{\underline{Langage}} &\centering\textbf{\underline{Description}}
@@ -348,44 +349,22 @@ UML, Design Patterns\\
 
 \section{Réalisation Technique \small(projets personnels)}
 
-%\begin{itemize}\addtolength{\itemsep}{-.35\baselineskip}  
-%\item yo \item un autre
-%\end{itemize}
-\begin{tabular*}{\linewidth}{  
-                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
-                   p{\dimexpr 0.33\linewidth-1\tabcolsep }  
-                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
-                   } 
-$\bullet$ \textbf{Site web}, \textsl{en construction} \par  \href{www.courspiano.ca}{www.courspiano.ca} 
+\cvtriplebox
+{\cvboxitem{Site web}{en construction}{www.courspiano.ca}{Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress}}
+{\cvboxitem{Site web}{en construction}{coursmusique.codefaction.webfactional.com}{Un site designé sur photoshop et transposé en html/css. Le back-end est fait sur la plateforme Django}}
+{\cvboxitem{Encefal}{projet en collaboration}{http://foireauxlivres.uqam.ca/}{La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants. La plateforme est Django.}}
 
-&$\bullet$ \textbf{Site web}, \textsl{en construction} \par \small\href{http://coursmusique.codefaction.webfactional.com}{coursmusique.codefaction.webfactional.com}
-&$\bullet$ \textbf{Encefal}, \textsl{projet en collaboration} \par \href{http://foireauxlivres.uqam.ca/}{http://foireauxlivres.uqam.ca/} \tabularnewline \\
-
-
-\vspace{-1.4em}Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress
-& \vspace{-1.5em} Un site designé sur photoshop et transposé en html/css. Le back-end est fait sur la plateforme Django  
-&\vspace{-1.5em} La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants. La plateforme est Django. 
-\tabularnewline \\
-
-$\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} \par \small \href{https://class.coursera.org/android-001}{https://class.coursera.org/android-001}
-
-
-&$\bullet$ \textbf{Algorithms, Part I} \par \small \href{https://class.coursera.org/algs4partI-004}{https://class.coursera.org/algs4partI-004} 
-
-
-& \tabularnewline \\
-\vspace{-1.5em} Je suis présentement un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org
-
-& \vspace{-1.5em} Je suis présentement un cours sur les algorithmes et structures de données fondamentaux. C'est un cours en ligne donné par l'Université de Princeton via le site coursera.org
-
-
-\end{tabular*}   
-
-
-
-
-
-
+\cvtriplebox
+{\cvboxitem{Programming Mobile Applications for Android Handheld Systems}{}{https://class.coursera.org/android-001}
+{J'ai suivie un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org}
+}
+{\cvboxitem{MineSweeper AI}{}{https://github.com/GitMyCode/Minesweeper-AI}
+{Un projet initialement personnel qui a été repris pour un projet de fin de session d'un cours d'Intelligence Artificiel}
+}
+{
+\cvboxitem{Site Web}{contrat}{http://www.avocatcriminel.ca/}{https://github.com/GitMyCode/avocatmontreal}
+{Un contrat de mise à jours d'un siteweb vers un design plus moderne et mobile friendly }
+}
 
 
 
@@ -409,9 +388,6 @@ $\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} 
 \item Graphisme: Grand intérêt pour le design web.
 \item Programmation: Toujours à la recherche de projets intéressants!
 \end{itemize}
-
-
-
 
 
 %\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
