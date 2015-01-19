@@ -38,7 +38,6 @@
 
 
 \AtBeginDocument{\def\labelitemi{$\bullet$}} %pour redefinir les bulletlist
-
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
@@ -75,6 +74,9 @@
     \if x& #7 &%
       \else{\newline{}\begin{minipage}[t]{\linewidth}\small #7 \end{minipage}}\fi}}
 
+
+
+
 % colors
 %-------
 \definecolor{color0}{rgb}{0,0,0}% main default color, normally left to black
@@ -107,7 +109,7 @@
 \newcommand{\cvitem}[3][\spacecvline]{
 \noindent\begin{tabular}
 {@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth}@{}}
-	\raggedleft{\emph{#2}} &{#3}%
+	\raggedleft{\emph{#2}} &{ #3}%
 \end{tabular}%
 \vspace{-1em}\par\addvspace{#1}  }
 
@@ -132,6 +134,23 @@
 	\ifx&#6&
 	    \else{\vspace{-0.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}\fi
 }}
+
+
+
+%CVDETAILITEM-----------------------------
+\newcommand{\cvdetailitem}[3][\spacecvline]{
+\noindent\begin{tabular}
+{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth}@{}}
+	\raggedright{\bf{#2}} &{ #3}%
+\end{tabular}%
+\vspace{-0.9em}\par\addvspace{#1}  }
+
+%CVDETAILENTRE----------------------------
+\newcommand{\cvdetaillist}[3][.25em]{}
+\renewcommand{\cvdetaillist}[3][.25em]{%
+  \cvdetailitem[#1]{#2}{#3}}
+
+
 
 %SUBSECTION----------------------------------
 \def\middleline{
@@ -171,7 +190,7 @@
 \begin{tabular}{l}
 
 \fontsize{43}{36}\textsf{Martin Bouchard}%
- \vspace{0.6em}\\\LARGE{\textit{  Étudiant en Informatique}}
+ \vspace{0.6em}\\\LARGE{\textit{ Programmeur }}
 \end{tabular}
 \end{minipage}
 \hspace{0.5cm}
@@ -202,6 +221,11 @@
 
 \section{Expérience Professionnelle}
 
+\cventre[1.3em]{2014}{Stagiaire}{Telica Software}
+					 {Développeur back-end et front-end sur une application web en Ruby on Rails }
+					 {$\bullet$ TDD $\bullet$ Développement Agile $\bullet$ Architecture MVC  }
+
+
 \cventre[1.3em]{2013}{Stagiaire}
 {Ville de Montréal}
 {Conception d'applications d'affaires sur la plateforme de developpement web Apex de Oracle.}
@@ -219,10 +243,10 @@
 \section{Compétence Informatique}
 
 
-\cvdoubleitem{programmation:}{Java, Python, C/C++, Assembleur, BASH}
+\cvdoubleitem{programmation:}{Java, Python, C/C++, Assembleur, BASH, Ruby}
 			 { web:}{HTML/css/php/javascript, jQuery Mobile}
 \cvdoubleitem{cms:}
-			 {Apex, Django, Wordpress}{system:}{Windows, Linux}
+			 {Apex, Django, Wordpress, Ruby on Rails}{system:}{Windows, Linux}
 \cvdoubleitem{bd:}{MySQL, Oracle, SQL, PL/SQL}{génie:}{UML, Design Patterns, Agile, Git}
 
 \/*
@@ -237,46 +261,60 @@ UML, Design Patterns\\
 \textbf{IDE} & Eclipse, vim, SublimeText, Photoshop
 \end{tabular}
 */
+\clearpage
 
 
 
-\section{Travaux Pratiques}
+
+
+
+
+
+
+
+
+
+
+
+\section{Travaux Pratiques \small (École)}
 \begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
 						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
 \centering\textbf{\underline{Langage}} &\centering\textbf{\underline{Description}}
 \end{tabular*}
 \\\\
-\begin{tabular*}{\linewidth}{p{\dimexpr 0.13\linewidth-1\tabcolsep }
-						 	 p{\dimexpr 0.78\linewidth-1\tabcolsep }} 
-						 	 
-\textbf{Java} &  \vspace{-0.5em}
-\begin{itemize}
 
-\item Système de gestion d'employés et d'horaires. Modélisation orientée objet et héritage multiple
+\cvdetaillist{Java}{
+\begin{itemize}
+\item Jeu de Connect4 avec un AI minmax et interface. Le jeu a été conçu dans le cadre d'un cours sur les designs pattern. Il y a notamment: Strategy, Command, Memento, Factory, Facade \small \href{https://github.com/GitMyCode/puissance4}{https://github.com/GitMyCode/puissance4}
 \item Programmes Java utilisant  JPA et JDBC 
+\item Intelligence artificielle du jeu Connect5(\textit{Go-Moku}) \small \href{https://github.com/GitMyCode/INF4230}{https://github.com/GitMyCode/INF4230}
 \end{itemize}
-\\
-\textbf{C++} & \vspace{-0.5em}
+}
 
-\begin{itemize}
-\item Jeu de \emph{snake}
-\item Système interrogable prenant en input des données de location de personnes. Le temps d'éxécution du programme devait être optimisé. Implentation d'un Arbre-map
-\item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
-\end{itemize}
-\\
-\textbf{C} & \vspace{-0.5em}
-
+\cvdetaillist{C/C++}{
 \begin{itemize}
 \item Implémentation des fonctionnalités de la commande \emph{find} d'Unix
 \item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
+
+\item Jeu de \emph{snake} avec une implémentation d'un tableau dynamique
+\item Système interrogable prenant en input des données de location de personnes. Le temps d'éxécution du programme devait être optimisé. Implentation d'un Arbre-map
+\item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
 \end{itemize}
+}
+\cvdetaillist{\small Nodejs/Mongodb HTML/CSS}{$\bullet$ Application web couvrant la plupart des verbes http sur une base de données mongodb   \newline\small{\href{https://github.com/GitMyCode/INF4375\_TP2}{https://github.com/GitMyCode/INF4375\_TP2}}}
+\vspace{1em}\par
 
 
-\end{tabular*}
 
 
 
-\section{Réalisation Technique}
+
+
+
+
+
+
+\section{Réalisation Technique \small(projets personnels)}
 
 %\begin{itemize}\addtolength{\itemsep}{-.35\baselineskip}  
 %\item yo \item un autre
@@ -309,8 +347,18 @@ $\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} 
 & \vspace{-1.5em} Je suis présentement un cours sur les algorithmes et structures de données fondamentaux. C'est un cours en ligne donné par l'Université de Princeton via le site coursera.org
 
 
-
 \end{tabular*}   
+
+
+
+
+
+
+
+
+
+
+
 \section{Autres}
 \subsection{Activité}
 \begin{itemize}
@@ -329,6 +377,13 @@ $\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} 
 \item Graphisme: Grand intérêt pour le design web.
 \item Programmation: Toujours à la recherche de projets intéressants!
 \end{itemize}
+
+
+
+
+
+
+
 
 %\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
 \end{document}
