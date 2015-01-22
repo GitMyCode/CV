@@ -6,6 +6,11 @@
 
 %\usepackage{fourier-orns} \Huge\hrulefill\hspace{0.2cm} \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
 %\usepackage{fancyhdr} \pagestyle{fancy}  \lhead{\hrule \vbox to 10pt{\vrule height 05pt width 1pt} LEFT}
+
+%\usepackage[factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{textcase}
+\usepackage[none]{hyphenat}
+\usepackage[thinlines]{easytable}
 \usepackage{comment}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -35,6 +40,7 @@
 
 
 %-----------Font
+
 
 
 \AtBeginDocument{\def\labelitemi{$\bullet$}} %pour redefinir les bulletlist
@@ -116,21 +122,24 @@
 
 %CVDOUBLEITEM-----------------------------
 \newcommand{\cvdoubleitem}[5][\spacecvline]{%
- \cvitem[#1]{\rmfamily \scshape #2}{%
+
+ \cvitem[#1]{\bf #2}{%
    \begin{minipage}[t]{0.4\linewidth}#3\end{minipage}%
    %
-   \begin{minipage}[t]{\indicewidth}\rmfamily \scshape\raggedleft{#4}\end{minipage}%
+   \begin{minipage}[t]{\indicewidth}\bf\raggedleft{#4}\end{minipage}%
    \hspace*{\separatorcolumnwidth}
-   \begin{minipage}[t]{0.4\linewidth}#5\end{minipage}}}
+   \begin{minipage}[t]{0.4\linewidth}#5\end{minipage}}
+  
+}
 
 
 %CVENTRE----------------------------------
 \newcommand{\cventre}[6][\spacecvline]{
 \cvitem[#1]{#2}{
 	{\bfseries #3}%
-	\ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}\strut%
+	\ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}\strut\vspace{0.2em}%
 	\ifx&#5&
-	    \else{\vspace{-0.1em}\newline{}\begin{minipage}[t]{\linewidth}\begin{spacing}{0.8}\small #5 \end{spacing} \end{minipage}}\fi
+	    \else{\vspace{-0.1em}\newline{}\begin{minipage}[t]{\linewidth}\begin{spacing}{0.8} #5 \end{spacing} \end{minipage}}\fi
 	\ifx&#6&
 	    \else{\vspace{-0.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}\fi
 }}
@@ -153,13 +162,16 @@
 
 
 %CVBOXITEM--------------------------------
-\newcommand{\cvboxitem}[4]{}
-\renewcommand{\cvboxitem}[4]{%
+\newcommand{\cvboxitem}[5]{}
+\renewcommand{\cvboxitem}[5]{%
 	\begin{minipage}[t]{\linewidth}
+	
 	$\bullet$ \textbf{#1}
 	\ifthenelse{\equal{#2}{}}{}{, {\slshape #2}}\par%	
-	\raggedright{\scriptsize\href{#3}{#3}}\vspace{1em}\\
-	{#4}
+	\raggedright{\scriptsize\href{#3}{#3}}\\
+	{\small\slshape\color{Bittersweet} {#4}}\vspace{0.2em}\\
+	{#5}
+
 	\end{minipage}
 	
 }
@@ -254,18 +266,18 @@
 
 \section{Expérience Professionnelle}
 
-\cventre[1.3em]{2014}{Stagiaire}{Telica Software}
+\cventre[2em]{2014}{Stagiaire}{Telica Software}
 					 {Développeur back-end et front-end sur une application web en Ruby on Rails }
-					 {$\bullet$ TDD $\bullet$ Développement Agile $\bullet$ Architecture MVC  }
+					 {$\bullet$ TDD $\bullet$ Développement Agile $\bullet$ Architecture MVC $\bullet$ Git $\bullet$ Ruby on Rails $\bullet$ Rspec/test \\ $\bullet$ Déploiement code production  }
 
 
-\cventre[1.3em]{2013}{Stagiaire}
+\cventre[2em]{2013}{Stagiaire}
 {Ville de Montréal}
 {Conception d'applications d'affaires sur la plateforme de developpement web Apex de Oracle.}
 {$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end(Apex) de page web \\$\bullet$ Conception de schema bd  $\bullet$ Intégration avec LDAP $\bullet$ Architecture d'application sous forme de service}
 
 
-\cventre[1.3em]{2012}{Développeur}
+\cventre[2em]{2012}{Développeur}
 {Fasken Martineau DuMoulin, S.E.N.C.R.L}
 {Programmation de templates avec l'API de XpressDox. Cette API s'intègre avec Microsoft Word et automatise la génération de document. J'étais le seul qui s'avais utiliser Xpressdox dans l'entreprise.}
 {$\bullet$ Développer un framework $\bullet$ Proposer des solutions techniques aux besoins des avocats \newline{} $\bullet$ Trouver des solutions à des problèmes sans ressource}
@@ -275,12 +287,15 @@
 
 \section{Compétence Informatique}
 
-
-\cvdoubleitem{programmation:}{Java, Python, C/C++, Assembleur, BASH, Ruby}
-			 { web:}{HTML/css/php/javascript, jQuery Mobile}
-\cvdoubleitem{cms:}
-			 {Apex, Django, Wordpress, Ruby on Rails}{system:}{Windows, Linux}
-\cvdoubleitem{bd:}{MySQL, Oracle, SQL, PL/SQL}{génie:}{UML, Design Patterns, Agile, Git}
+%\begin{comment}
+\cvdoubleitem{Programmation}{Java, Python, C/C++, Assembleur, BASH, Ruby}
+			 {System}{Windows, Linux}\vspace{1em}
+\cvdoubleitem{Web framework}{Apex, Django, Wordpress, Ruby on Rails, Play}
+			 {Web}{HTML/CSS , PHP, javascript, jQuery Mobile, AngularJS, Bootstrap  }\vspace{1em}
+\cvdoubleitem{BD}{MySQL, Oracle, SQL, PL/SQL, JPA , JDBC}
+			 {Génie}{UML, Design Patterns, Agile, Git}\vspace{1em}
+\cvdoubleitem{Outils Développement}{Vim, SublimeText, RubyMine, Intellij, Android Studio}
+			 {Language Markup}{\LaTeX{}, Markdown}\vspace{1em}
 
 \/*
 \begin{tabular}{ll}
@@ -294,6 +309,20 @@ UML, Design Patterns\\
 \textbf{IDE} & Eclipse, vim, SublimeText, Photoshop
 \end{tabular}
 */
+%\end{comment}
+\begin{comment}
+\begin{tabular*}{\linewidth}{
+				   p{\dimexpr 0.15\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.25\linewidth-1\tabcolsep } 
+                   p{\dimexpr 0.25\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.25\linewidth-1\tabcolsep } 
+                   } 
+   		         & Programmation & Web/Framework & BD \vspace{1.5em}\tabularnewline
+À l'aise		 &               &   Django,WordPress            & \tabularnewline[10ex]
+Très à l'aise 	 &               &   Ruby on rails           & \tabularnewline[10ex]
+Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
+\end{tabular*}
+\end{comment}
 \clearpage
 
 
@@ -319,7 +348,6 @@ UML, Design Patterns\\
 \cvdetaillist{Java}{
 \begin{itemize}
 \item Jeu de Connect4 avec un AI minmax et interface. Le jeu a été conçu dans le cadre d'un cours sur les designs pattern. Il y a notamment: Strategy, Command, Memento, Factory, Facade \small \href{https://github.com/GitMyCode/puissance4}{https://github.com/GitMyCode/puissance4}
-\item Programmes Java utilisant  JPA et JDBC 
 \item Intelligence artificielle du jeu Connect5(\textit{Go-Moku}) \small \href{https://github.com/GitMyCode/INF4230}{https://github.com/GitMyCode/INF4230}
 \end{itemize}
 }
@@ -334,7 +362,7 @@ UML, Design Patterns\\
 \item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
 \end{itemize}
 }
-\cvdetaillist{\small Nodejs/Mongodb HTML/CSS}{$\bullet$ Application web couvrant la plupart des verbes http sur une base de données mongodb   \newline\small{\href{https://github.com/GitMyCode/INF4375\_TP2}{https://github.com/GitMyCode/INF4375\_TP2}}}
+\cvdetaillist{\small Nodejs/Mongodb HTML/CSS}{$\bullet$ Application web couvrant la plupart des verbes http sur une base de données mongodb   \newline\small{\href{http://gitmycode.github.io/inf4375-tp3/}{http://gitmycode.github.io/inf4375-tp3/}}}
 \vspace{1em}\par
 
 
@@ -350,45 +378,54 @@ UML, Design Patterns\\
 \section{Réalisation Technique \small(projets personnels)}
 
 \cvtriplebox
-{\cvboxitem{Site web}{en construction}{www.courspiano.ca}{Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress}}
-{\cvboxitem{Site web}{en construction}{coursmusique.codefaction.webfactional.com}{Un site designé sur photoshop et transposé en html/css. Le back-end est fait sur la plateforme Django}}
-{\cvboxitem{Encefal}{projet en collaboration}{http://foireauxlivres.uqam.ca/}{La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants. La plateforme est Django.}}
+{\cvboxitem{Site web}{abandonné}{www.courspiano.ca}{Wordpress,PHP}
+{Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress}}
+{\cvboxitem{Site web}{abandonné}{http://coursmusique.codefaction.webfactional.com}{Django}
+{Un site designé sur photoshop et transposé en html/css.}}
+{\cvboxitem{Encefal}{projet en collaboration}{http://foireauxlivres.uqam.ca/}{Django}
+{La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants.}}
 
 \cvtriplebox
-{\cvboxitem{Programming Mobile Applications for Android Handheld Systems}{}{https://class.coursera.org/android-001}
+{\cvboxitem{Programming Mobile Applications for Android Handheld Systems}{}{https://class.coursera.org/android-001}{Android, Java}
 {J'ai suivie un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org}
 }
-{\cvboxitem{MineSweeper AI}{}{https://github.com/GitMyCode/Minesweeper-AI}
+{\cvboxitem{MineSweeper AI}{}{https://github.com/GitMyCode/Minesweeper-AI}{Java}
 {Un projet initialement personnel qui a été repris pour un projet de fin de session d'un cours d'Intelligence Artificiel}
 }
 {
-\cvboxitem{Site Web}{contrat}{http://www.avocatcriminel.ca/}{https://github.com/GitMyCode/avocatmontreal}
+\cvboxitem{Site Web}{contrat}{http://gitmycode.github.io/avocatmontreal/}{ HTML/CSS/Javascript}
 {Un contrat de mise à jours d'un siteweb vers un design plus moderne et mobile friendly }
 }
+\cvtriplebox
+{\cvboxitem{Android Game}{en cours}{https://github.com/GitMyCode/laser-game}{Unity,C\#}{Une petite idée de jeu android que j'ai eu. C'est principalement pour le plaisir de le faire plus que pour le jeu. C'est un jeu en 2d real-time multiplayer}}
+{\cvboxitem{Google Codejam}{}{https://github.com/GitMyCode/code-jam}{Java, Scala, Dynamic programming}
+{\href{https://code.google.com/codejam}{Google codejam} est un site de compétition de programmation. Ce repo contient mes solutions. Le code n'est malheureusement pas très entretenu }}
+
+{}
 
 
 
-
-
-\section{Autres}
-\subsection{Activité}
-\begin{itemize}
-
-\item[$\bullet$]Bénévolat au CSJR (Centre de Service de Justice Reparatrice)
-\item Bénévolat comme caméraman à Télémag
-\end{itemize}
+\vspace{-2em}
+\section{Autre}\vspace{-1em}
+\cvtriplebox{
 \subsection{Langue}
 \begin{itemize}
 \item[$\bullet$] Français langue maternelle 
 \item Anglais fonctionnel
 \end{itemize}
-
-\subsection{Intérêt}
+}
+{\subsection{Intérêt}
 \begin{itemize}
-\item Graphisme: Grand intérêt pour le design web.
-\item Programmation: Toujours à la recherche de projets intéressants!
+\item[$\bullet$] Programmation : Toujours à la recherche de projets intéressants !
+\item Guitare
 \end{itemize}
-
+}
+{\subsection{}
+\begin{itemize}
+\item Video games
+\item Board games
+\end{itemize}
+}
 
 %\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
 \end{document}
