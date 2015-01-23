@@ -202,7 +202,7 @@
 }
 
 \renewcommand{\subsection}[1]{
-\par\addvspace{3ex}
+\par\addvspace{3ex}\hspace{-2em}
 \begin{tabular}{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
     \raggedleft\indicestyle{}\middleline & { \strut\bfseries {#1} }%
     \par
@@ -343,7 +343,7 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 \begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
 						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
 \centering\underline{Langage} &\centering\underline{Description}
-\end{tabular*}
+\end{tabular*}\vspace{-1em}
 \\\\
 
 \cvdetaillist{Java}{
@@ -383,7 +383,7 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 
 
 
-
+\vspace{-0.5em}
 \section{Réalisation Technique \small(projets personnels)}
 
 \cvtriplebox
@@ -418,8 +418,8 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 
 
 \vspace{-2em}
-\section{Autre}\vspace{0em}
-
+\section{Autre}\vspace{-2.5em}
+\begin{comment}
 \begin{tabular*}{\linewidth}{  
                    p{\dimexpr 0.33\linewidth-1\tabcolsep } 
                    p{\dimexpr 0.66\linewidth-1\tabcolsep }  
@@ -442,10 +442,10 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 \tabularnewline
 
 \end{tabular*}
+\end{comment}
 
 
-
-\begin{comment}
+%\begin{comment}
 \cvtriplebox{
 \subsection{Langue}
 \begin{itemize}
@@ -461,7 +461,12 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 \end{itemize}
 }
 {
+\subsection{Implications sociales}
+\begin{itemize}
+\item[$\bullet$] Associations étudiantes
+\item CSGAMES
+\end{itemize}
 }
-\end{comment}
+%\end{comment}
 %\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
 \end{document}
