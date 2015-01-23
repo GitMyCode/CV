@@ -1,0 +1,465 @@
+% Exemple de CV utilisant la classe moderncv
+% Style casual en orange
+% Article complet : http://blog.madrzejewski.com/creer-cv-elegant-latex-moderncv/
+
+\documentclass[a4paper,10pt]{extarticle}
+
+%\usepackage{fourier-orns} \Huge\hrulefill\hspace{0.2cm} \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
+%\usepackage{fancyhdr} \pagestyle{fancy}  \lhead{\hrule \vbox to 10pt{\vrule height 05pt width 1pt} LEFT}
+
+%\usepackage[factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{textcase}
+\usepackage[none]{hyphenat}
+\usepackage[thinlines]{easytable}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\inputencoding{latin1} % important pour les carathere francais
+
+\usepackage[left=1cm,right=1.5cm,top=1.5cm,bottom=0.5cm]{geometry}
+%\usepackage[top=2.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
+
+% Largeur de la colonne pour les dates
+%A Few Useful Packages
+%\usepackage{marvosym}\textsc{\textsc{}}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+%\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{ifthen} % pour les ifthenelse
+\usepackage{pbox} % pour faire un \\ dans une cellule
+\usepackage{setspace} % pour les begin{spacing}{0/7}
+
+\usepackage{mathptmx}
+%\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usepackage{fontawesome}
+%-----------Font
+
+
+
+\AtBeginDocument{\def\labelitemi{$\bullet$}} %pour redefinir les bulletlist
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+%----------------------------------------------
+
+\usepackage{enumitem}
+
+\titleformat{\section}{\Large\mdseries\upshape}{}{0em}{}[\titlerule]
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+
+%------------Definition de column custom-------------
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering}p{#1}}
+\newcolumntype{L}[1]{>{\raggedleft}p{#1}}
+\newcolumntype{R}[1]{>{\raggedright}p{#1}}
+%------------             FIN           -------------
+
+
+\newcommand{\cventry}[7][.25em]{}
+\renewcommand{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries #3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    .\strut%
+    \if x& #7 &%
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small #7 \end{minipage}}\fi}}
+
+
+
+
+% colors
+%-------
+\definecolor{color0}{rgb}{0,0,0}% main default color, normally left to black
+\definecolor{color1}{rgb}{0,0,0}% primary scheme color
+\definecolor{color2}{rgb}{0,0,0}% secondary scheme color
+\definecolor{color3}{rgb}{0,0,0}% tertiary scheme color
+
+%lengths width
+\newlength{\indicewidth}%
+\setlength{\indicewidth}{0.13\textwidth}%45pt0.175\textwidth
+\newlength{\separatorcolumnwidth}%
+\setlength{\separatorcolumnwidth}{0.025\textwidth}%
+\newlength{\maincolumnwidth}%
+\setlength{\maincolumnwidth}{0.84\textwidth}%
+\newlength{\spacecvline}%
+\setlength{\spacecvline}{0.85em}
+%-----------FIN def lenght
+
+
+% Styles
+\newcommand{\hintfont}{}
+\newcommand{\indicestyle}[1]{\slshape\textcolor{color0}{#1}}
+
+
+\renewcommand{\labelitemii}{\small$\blacksquare$} 
+%%%%%%%%%%%%%% NEW COMANDE %%%%%%%%%%%%%%
+
+
+%CVITEM----------------------------------
+\newcommand{\cvitem}[3][\spacecvline]{
+\noindent\begin{tabular}
+{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth}@{}}
+	\raggedleft{\emph{#2}} &{ #3}%
+\end{tabular}%
+\vspace{-1em}\par\addvspace{#1}  }
+
+
+%CVDOUBLEITEM-----------------------------
+\newcommand{\cvdoubleitem}[5][\spacecvline]{%
+
+ \cvitem[#1]{\bf #2}{%
+   \begin{minipage}[t]{0.4\linewidth}#3\end{minipage}%
+   %
+   \begin{minipage}[t]{\indicewidth}\bf\raggedleft{#4}\end{minipage}%
+   \hspace*{\separatorcolumnwidth}
+   \begin{minipage}[t]{0.4\linewidth}#5\end{minipage}}
+  
+}
+
+
+%CVENTRE----------------------------------
+\newcommand{\cventre}[6][\spacecvline]{
+\cvitem[#1]{#2}{
+	{\bfseries #3}%
+	\ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}\strut\vspace{0.2em}%
+	\ifx&#5&
+	    \else{\vspace{-0.1em}\newline{}\begin{minipage}[t]{\linewidth}\begin{spacing}{0.8} #5 \end{spacing} \end{minipage}}\fi
+	\ifx&#6&
+	    \else{\vspace{-0.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}\fi
+}}
+
+
+
+%CVDETAILITEM-----------------------------
+\newcommand{\cvdetailitem}[3][\spacecvline]{
+\noindent\begin{tabular}
+{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth}@{}}
+	\raggedright{\bf{#2}} &{ #3}%
+\end{tabular}%
+\vspace{-0.9em}\par\addvspace{#1}  }
+
+%CVDETAILENTRE----------------------------
+\newcommand{\cvdetaillist}[3][.25em]{}
+\renewcommand{\cvdetaillist}[3][.25em]{%
+  \cvdetailitem[#1]{#2}{#3}}
+
+
+
+%CVBOXITEM--------------------------------
+\newcommand{\cvboxitem}[5]{}
+\renewcommand{\cvboxitem}[5]{%
+	\begin{minipage}[t]{\linewidth}
+	
+	$\bullet$ \textbf{#1}
+	\ifthenelse{\equal{#2}{}}{}{, {\slshape #2}}\par%	
+	\raggedright{\scriptsize\href{#3}{#3}}\\
+	{\small\slshape\color{Bittersweet} {#4}}\vspace{0.2em}\\
+	{#5}
+
+	\end{minipage}
+	
+}
+  
+
+%CVTRIPLEBOX------------------------------
+\def\cvtripleboxutil#1#2#3#4{
+\cvboxitem{#1}{#2}{#3}{#4}
+}
+%CVTRIPLEBOX------------------------------
+\newcommand{\cvtriplebox}[3]{}
+\renewcommand{\cvtriplebox}[3]{
+\begin{tabular*}{\linewidth}{  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   } 
+{#1}&{#2}&{#3}\tabularnewline
+\end{tabular*}
+}
+
+
+
+
+%SUBSECTION----------------------------------
+\def\middleline{
+\raisebox{0.35em}{\line(1,0){50}}
+}
+
+\renewcommand{\subsection}[1]{
+\par\addvspace{3ex}
+\begin{tabular}{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft\indicestyle{}\middleline & { \strut\bfseries {#1} }%
+    \par
+\end{tabular}%
+\vspace{-0.5em}
+}
+
+
+
+\long\def\/*#1*/{}
+\usepackage{pdfpages}
+
+
+%%%%%%%%%%%%%%  FIN New COMANDE  %%%%%%%%%%%%%% 
+
+ \renewcommand\familydefault{\sfdefault}
+
+
+
+%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+\begin{document}
+
+
+
+\begin{table}[ht]
+\begin{minipage}[b]{0.74\textwidth}
+\begin{tabular}{l}
+
+\fontsize{43}{36}\textsf{Martin Bouchard}%
+ \vspace{0.6em}\\\LARGE{\textit{ Programmeur }}
+\end{tabular}
+\end{minipage}
+\hspace{0.5cm}
+\noindent
+\begin{minipage}[b]{0.25\textwidth}\raggedright
+\begin{tabular}{|r}
+\\
+  \textit{4449 rue Adam}  \\
+   \textit{Montréal H1V 1T7}\\ 
+  \textit{marbouchl@gmail.com} \\
+   \textit{438 888 9741}  \\
+    \faGithub\hspace{0.2em}\textit github: GitMyCode 
+    
+\end{tabular}
+\end{minipage}
+\end{table}
+
+
+\section{Sommaire}
+{Diplômé d'un baccalauréat en programmation et génie logiciel. Je perfectionne et étends également mes connaissances de manière autodidacte dans mes temps libres. J'ai un intérêt pour les problèmes algorithmiques ( particulierement ceux sur \\\href{https://code.google.com/codejam}{code.google.com/codejam}) et les applications web. J'ai de l'expérience dans l'ensemble du processus de développement logiciel, de la conception jusqu'à la mise en production et la maintenance.}
+\vspace{-1em}
+\section{Formation}
+
+\cventre{2011-2014}{Baccalauréat informatique}{Université du Québec à Montréal}{}{}
+\cventre{2010}{Certificat en Criminologie}{ Université de Montréal}{}{}
+
+\cventre{2008}{Attestation Études Cinématographiques}{École de Cinéma et de télévision de Québec}{}{}
+
+
+
+\section{Expérience Professionnelle}
+
+\cventre[2em]{2014}{Stagiaire}{Telica Software}
+					 {Développeur back-end et front-end sur une application web en Ruby on Rails }
+					 {$\bullet$ TDD $\bullet$ Développement Agile $\bullet$ Architecture MVC $\bullet$ Git $\bullet$ Ruby on Rails $\bullet$ Rspec/test \\ $\bullet$ Déploiement code production  }
+
+
+\cventre[2em]{2013}{Stagiaire}
+{Ville de Montréal}
+{Conception d'applications d'affaires sur la plateforme de développement web Apex de Oracle.}
+{$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end(Apex) de page web \\$\bullet$ Conception de schema bd  $\bullet$ Intégration avec LDAP $\bullet$ Architecture d'application sous forme de service}
+
+
+\cventre[2em]{2012}{Développeur}
+{Fasken Martineau DuMoulin, S.E.N.C.R.L}
+{Programmation de templates avec l'API de XpressDox. Cette API s'intègre avec Microsoft Word et automatise la génération de document. J'étais le seul qui s'avais utiliser Xpressdox dans l'entreprise.}
+{$\bullet$ Développer un framework $\bullet$ Proposer des solutions techniques aux besoins des avocats \newline{} $\bullet$ Trouver des solutions à des problèmes sans ressource}
+ 
+
+\cventre[0.5em]{2011}{Commis-Archive}{Agence des Services Frontaliers du Canada.}{Gestion des dossiers dans les archives des services frontalier}
+
+\section{Compétence Informatique}
+\vspace{1em}
+%\begin{comment}
+\cvdoubleitem{Programmation}{Java, Scala, Python, C/C++, Assembleur, BASH, Ruby}
+			 {System}{Windows, Linux}\vspace{1em}
+\cvdoubleitem{Web framework}{Apex, Django, Wordpress, Ruby on Rails, Play}
+			 {Web}{HTML/CSS , PHP, javascript, jQuery Mobile, AngularJS, Bootstrap  }\vspace{1em}
+\cvdoubleitem{BD}{MySQL, Oracle, SQL, PL/SQL, JPA , JDBC}
+			 {Génie}{UML, Design Patterns, Agile, Git}\vspace{1em}
+\cvdoubleitem{Outils Développement}{Vim, SublimeText, RubyMine, Intellij, Android Studio}
+			 {Language Markup}{\LaTeX{}, Markdown}\vspace{1em}
+
+\/*
+\begin{tabular}{ll}
+\textbf{Langages} & 
+html/css/php/javascript, jQuery Mobile, Apex, PL/SQL, C/C++, Java, Bash, Python,    Latex, Assembleur  \\
+\textbf{Génie} &
+UML, Design Patterns\\
+\textbf{BD} & MySQL, Oracle \\
+\textbf{CMS} & WordPress, Django \\
+\textbf{Systèmes} & Windows, Linux \\
+\textbf{IDE} & Eclipse, vim, SublimeText, Photoshop
+\end{tabular}
+*/
+%\end{comment}
+\begin{comment}
+\begin{tabular*}{\linewidth}{
+				   p{\dimexpr 0.15\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.25\linewidth-1\tabcolsep } 
+                   p{\dimexpr 0.25\linewidth-1\tabcolsep }  
+                   p{\dimexpr 0.25\linewidth-1\tabcolsep } 
+                   } 
+   		         & Programmation & Web/Framework & BD \vspace{1.5em}\tabularnewline
+À l'aise		 &               &   Django,WordPress            & \tabularnewline[10ex]
+Très à l'aise 	 &               &   Ruby on rails           & \tabularnewline[10ex]
+Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
+\end{tabular*}
+\end{comment}
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Travail Pratique \small (École)}
+\begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
+						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
+\centering\underline{Langage} &\centering\underline{Description}
+\end{tabular*}
+\\\\
+
+\cvdetaillist{Java}{
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \setlength{\parskip}{5pt}
+  \setlength{\parsep}{0pt}
+\item Jeu de Puissance4 avec un A.I. minmax et une interface. Le jeu a été conçu dans le cadre d'un cours sur les designs pattern. Il y a notamment: Strategy, Command, Memento, Factory, Facade \small \href{https://github.com/GitMyCode/puissance4}{github.com/GitMyCode/puissance4}
+\item Intelligence artificielle du jeu Connect5(\textit{Go-Moku}). Tous les A.I. de la classe devaient participer à un tournois entre eux. La note était attribuée en fonction du placement après la compétition. Mon A.I. s'est distingué des autres et a obtenu la première place   \small \href{http://gitmycode.github.io/Connect5-Ai/}{gitmycode.github.io/Connect5-Ai} 
+
+\item Solveur du jeu \emph{Sokoban} avec l'algorithme A*  \small \href{https://github.com/GitMyCode/Sokoban-solver}{github.com/GitMyCode/Sokoban-solver}
+
+
+\end{itemize}
+}
+
+\cvdetaillist{C/C++}{
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \setlength{\parskip}{5pt}
+  \setlength{\parsep}{0pt}
+\item Implémentation des fonctionnalitées de la commande \emph{find} d'Unix
+\item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimensions.
+
+\item Jeu de \emph{snake} avec une implémentation d'un tableau dynamique
+\item Système interrogeable prenant en entrée des données de location de personnes. Le temps d'éxécution du programme devait être optimisé \emph{(meilleur temps de la classe)}. Implémentation d'un Arbre-map
+\item Système de recherche dans un Graph. Implémentation de l'algorythme de Tarjan et Dijkstra
+\end{itemize}
+}
+\cvdetaillist{\small Nodejs/Mongodb HTML/CSS}{$\bullet$ Application web couvrant la plupart des verbes http sur une base de données mongodb   \newline\small{\href{http://gitmycode.github.io/inf4375-tp3/}{http://gitmycode.github.io/inf4375-tp3/}}}
+\vspace{1em}\par
+
+
+
+
+
+
+
+
+
+
+
+\section{Réalisation Technique \small(projets personnels)}
+
+\cvtriplebox
+{\cvboxitem{MineSweeper AI}{}{https://github.com/GitMyCode/Minesweeper-AI}{Java}
+{Un projet initialement personnel qui a été repris pour un projet de fin de session d'un cours d'Intelligence Artificielle}}
+{\cvboxitem{Site web}{abandonné}{http://coursmusique.codefaction.webfactional.com}{Django}
+{Un site designé sur photoshop et transposé en html/css.}}
+{\cvboxitem{Encefal}{projet en collaboration}{http://foireauxlivres.uqam.ca/}{Django}
+{La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants.}}
+
+\cvtriplebox
+{\cvboxitem{Programming Mobile Applications for Android Handheld Systems}{}{https://class.coursera.org/android-001}{Android, Java}
+{J'ai suivi un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org}
+}
+{
+\cvboxitem{Site web}{abandonné}{www.courspiano.ca}{Wordpress,PHP}
+{Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress}
+}
+{
+\cvboxitem{Site Web}{contrat}{http://gitmycode.github.io/avocatmontreal/}{ HTML/CSS/Javascript}
+{Un contrat de mise à jours d'un siteweb vers un design plus moderne et mobile friendly }
+}
+\cvtriplebox
+{\cvboxitem{Android Game}{en cours}{https://github.com/GitMyCode/laser-game}{Unity,C\#}{Une petite idée de jeu android que j'ai eue. C'est principalement pour le plaisir de le faire plus que pour le jeu. C'est un jeu en 2d real-time multiplayer}}
+{\cvboxitem{Google Codejam}{}{https://github.com/GitMyCode/code-jam}{Java, Scala, Dynamic programming}
+{\href{https://code.google.com/codejam}{Google codejam} est un site de compétition de programmation. Ce \emph{repo} contient mes solutions. Le code n'est malheureusement pas très entretenu }}
+
+{}
+
+
+
+\vspace{-2em}
+\section{Autre}\vspace{0em}
+
+\begin{tabular*}{\linewidth}{  
+                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+                   p{\dimexpr 0.66\linewidth-1\tabcolsep }  
+                   }
+\begin{minipage}[t]{\linewidth}                   
+\subsection{Langue}
+\begin{itemize}
+\item[$\bullet$] Français langue maternelle 
+\item Anglais fonctionnel
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\subsection{Intérêt}
+\begin{itemize}
+\item[$\bullet$] Programmation : Toujours à la recherche de projets intéressants !
+\item Guitare
+\end{itemize}
+\end{minipage}
+\tabularnewline
+
+\end{tabular*}
+
+
+
+\begin{comment}
+\cvtriplebox{
+\subsection{Langue}
+\begin{itemize}
+\item[$\bullet$] Français langue maternelle 
+\item Anglais fonctionnel
+\end{itemize}
+}
+{
+\subsection{Intérêt}
+\begin{itemize}
+\item[$\bullet$] Programmation : Toujours à la recherche de projets intéressants !
+\item Guitare
+\end{itemize}
+}
+{
+}
+\end{comment}
+%\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
+\end{document}
