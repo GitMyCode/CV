@@ -202,7 +202,7 @@
 }
 
 \renewcommand{\subsection}[1]{
-\par\addvspace{3ex}
+\par\addvspace{3ex}\hspace{-2em}
 \begin{tabular}{@{}p{\indicewidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
     \raggedleft\indicestyle{}\middleline & { \strut\bfseries {#1} }%
     \par
@@ -267,24 +267,24 @@
 
 \section{Expérience Professionnelle}
 
-\cventre[2em]{2014}{Stagiaire}{Telica Software}
+\cventre[2em]{2014}{Stagiaire (Développeur-web) }{Telica Software}
 					 {Développeur back-end et front-end sur une application web en Ruby on Rails }
 					 {$\bullet$ TDD $\bullet$ Développement Agile $\bullet$ Architecture MVC $\bullet$ Git $\bullet$ Ruby on Rails $\bullet$ Rspec/test \\ $\bullet$ Déploiement code production  }
 
+\cventre[1.2em]{2014}{Développer Web}{Contrat}{ Un re-design d'une page web pour un avocat. Le client voulait un design plus modern qui serait \emph{ responsive design } pour les visiteurs mobile. \href{http://www.avocatcriminel.ca/}{www.avocatcriminel.ca}}
 
-\cventre[2em]{2013}{Stagiaire}
+
+\cventre[2em]{2013}{Stagiaire (Développeur)}
 {Ville de Montréal}
 {Conception d'applications d'affaires sur la plateforme de développement web Apex de Oracle.}
 {$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end(Apex) de page web \\$\bullet$ Conception de schema bd  $\bullet$ Intégration avec LDAP $\bullet$ Architecture d'application sous forme de service}
 
 
-\cventre[2em]{2012}{Développeur}
+\cventre[0.5em]{2012}{Programmeur}
 {Fasken Martineau DuMoulin, S.E.N.C.R.L}
 {Programmation de templates avec l'API de XpressDox. Cette API s'intègre avec Microsoft Word et automatise la génération de document. J'étais le seul qui s'avais utiliser Xpressdox dans l'entreprise.}
 {$\bullet$ Développer un framework $\bullet$ Proposer des solutions techniques aux besoins des avocats \newline{} $\bullet$ Trouver des solutions à des problèmes sans ressource}
  
-
-\cventre[0.5em]{2011}{Commis-Archive}{Agence des Services Frontaliers du Canada.}{Gestion des dossiers dans les archives des services frontalier}
 
 \section{Compétence Informatique}
 \vspace{1em}
@@ -343,7 +343,7 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 \begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
 						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
 \centering\underline{Langage} &\centering\underline{Description}
-\end{tabular*}
+\end{tabular*}\vspace{-1em}
 \\\\
 
 \cvdetaillist{Java}{
@@ -383,25 +383,27 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 
 
 
-
+\vspace{-0.5em}
 \section{Réalisation Technique \small(projets personnels)}
 
 \cvtriplebox
 {\cvboxitem{MineSweeper AI}{}{https://github.com/GitMyCode/Minesweeper-AI}{Java}
 {Un projet initialement personnel qui a été repris pour un projet de fin de session d'un cours d'Intelligence Artificielle}}
-{\cvboxitem{Site web}{abandonné}{http://coursmusique.codefaction.webfactional.com}{Django}
-{Un site designé sur photoshop et transposé en html/css.}}
 {\cvboxitem{Encefal}{projet en collaboration}{http://foireauxlivres.uqam.ca/}{Django}
 {La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants.}}
+{
+\cvboxitem{Site web}{abandonné}{www.courspiano.ca}{Wordpress,PHP}
+{Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress}
+}
+
+
 
 \cvtriplebox
 {\cvboxitem{Programming Mobile Applications for Android Handheld Systems}{}{https://class.coursera.org/android-001}{Android, Java}
 {J'ai suivi un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org}
 }
-{
-\cvboxitem{Site web}{abandonné}{www.courspiano.ca}{Wordpress,PHP}
-{Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress}
-}
+{\cvboxitem{Site web}{abandonné}{http://coursmusique.codefaction.webfactional.com}{Django}
+{Un site designé sur photoshop et transposé en html/css.}}
 {
 \cvboxitem{Site Web}{contrat}{http://gitmycode.github.io/avocatmontreal/}{ HTML/CSS/Javascript}
 {Un contrat de mise à jours d'un siteweb vers un design plus moderne et mobile friendly }
@@ -416,8 +418,8 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 
 
 \vspace{-2em}
-\section{Autre}\vspace{0em}
-
+\section{Autre}\vspace{-2.5em}
+\begin{comment}
 \begin{tabular*}{\linewidth}{  
                    p{\dimexpr 0.33\linewidth-1\tabcolsep } 
                    p{\dimexpr 0.66\linewidth-1\tabcolsep }  
@@ -440,10 +442,10 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 \tabularnewline
 
 \end{tabular*}
+\end{comment}
 
 
-
-\begin{comment}
+%\begin{comment}
 \cvtriplebox{
 \subsection{Langue}
 \begin{itemize}
@@ -459,7 +461,12 @@ Mon best         & Java \newline C\#  & & \tabularnewline[10ex]
 \end{itemize}
 }
 {
+\subsection{Implications sociales}
+\begin{itemize}
+\item[$\bullet$] Associations étudiantes
+\item CSGAMES
+\end{itemize}
 }
-\end{comment}
+%\end{comment}
 %\includepdfmerge{ReleverNotesNonOfficiel.pdf,-}
 \end{document}
