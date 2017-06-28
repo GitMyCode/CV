@@ -134,6 +134,15 @@
 	    \else{\vspace{-0.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}\fi
 }}
 
+%cvprojectitem----------------------------------
+\newcommand{\cvprojectitem}[3][0.5em]{
+	\noindent\begin{tabular*}{\linewidth}{p{\dimexpr 0.20\linewidth-1\tabcolsep }
+		p{\dimexpr 0.80\linewidth-1\tabcolsep }} 
+	\fontsize{8}{9}\textit{#2} & \small{#3} \vspace{0.3em}\\
+\end{tabular*}%
+	\vspace{-1em}\par\addvspace{#1}  }
+
+
 %SUBSECTION----------------------------------
 \def\middleline{
 \raisebox{0.35em}{\line(1,0){50}}
@@ -147,6 +156,9 @@
 \end{tabular}%
 \vspace{-0.5em}
 }
+
+
+
 
 
 
@@ -220,55 +232,28 @@
 
 \section{Réalisation Technique}
 \textbf{Système de gestion pour FNCM} \newline{}
-\small{Modernisation de leur ancien système pour un nouveau en mode SAS. Le nouveau système devait avoir toute les fonctionnalitées de l'ancien, mais avec des améliorations de vitesse plus d'autres fonctionnalité} \vspace{1em}\newline{} 
-\begin{tabular*}{\linewidth}{p{\dimexpr 0.20\linewidth-1\tabcolsep }
-		p{\dimexpr 0.84\linewidth-1\tabcolsep }} 
-	\fontsize{8}{9}\textit{BD (SQL)} & \small{Scriptes sql complexe afin d'optimiser certaines mise-à-jour dont la performance était importante.} \vspace{0.3em}\\
-	\fontsize{8}{9}\textit{Front-end (Knockout)} & \small{Mécanique d'édition et de d'annulation d'une modification.} \vspace{0.3em}\\
-	\fontsize{8}{9}\textit{Front-end (Knockout)} & \small{Développer une interface et une mécanique de recherche avancée.} \vspace{0.3em}\\
-	\fontsize{8}{9}\textit{C\#, rdlc, Entity-Framework} & \small{Développement de mécanismes de générations de rapport.} 
-	
-\end{tabular*}
+\small{Modernisation de leur ancien système pour un nouveau en mode SAS. Le nouveau système devait avoir toute les fonctionnalitées de l'ancien, mais avec des améliorations de vitesse plus d'autres fonctionnalité}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#, Knockout, SQL server, Entity framework}}\end{flushright}
+\cvprojectitem{BD (SQL)}{Scriptes sql complexe afin d'optimiser certaines mise-à-jour dont la performance était importante.}
+\cvprojectitem{Front-end (Knockout)}{Mécanique d'édition et de d'annulation d'une modification.}
+\cvprojectitem{Front-end (Knockout)}{Développer une interface et une mécanique de recherche avancée.}
+\cvprojectitem{C\#, rdlc, Entity-Framework}{Développement de mécanismes de générations de rapport.}
 
-\textbf{SAS de gestion syndicale - Sentinelle} (\href{https://www.saisentinelle.ca/}{https://www.saisentinelle.ca/}) \newline{}
-\small{ Sentinelle est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable pour aider les syndicats de plusieurs domain dans la gestion de leur membres} \vspace{1em}\newline{} 
-\begin{tabular*}{\linewidth}{p{\dimexpr 0.20\linewidth-1\tabcolsep }
-		p{\dimexpr 0.80\linewidth-1\tabcolsep }} 
-	\fontsize{8}{9}\textit{BD Raven(NO SQL)} & \small{Conceptualisé un schéma de base de donnée configurable pour adapter les différents besoin d'un client à l'autre} \vspace{0.3em}\\
-	\fontsize{8}{9}\textit{Front-end (Knockout)} & \small{Développement de plusieurs composante \textit{responsive} et \textit{ré-utilisable} qui ont accéléré le développement et la stabilité} \vspace{0.3em}\\
-	\fontsize{8}{9}\textit{C\#} & \small{Conception d'un engin de règle dynamique. Cette fonctionnalité permet au clients de configurer des alerts selon des filtres avec des conditions selon certains événement dans le système}
-	
-\end{tabular*}
+\vspace{1em}
 
+\textbf{SAS de gestion syndicale - Sentinelle} (\href{https://www.saisentinelle.ca/}{https://www.saisentinelle.ca/}) \newline
+\small{ Sentinelle est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable pour aider les syndicats de plusieurs domain dans la gestion de leur membres.}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#, Knockout, RavenDb}}\end{flushright}
+\vspace{1em}
+\cvprojectitem{BD Raven(NO SQL)}{Conceptualisé un schéma de base de donnée configurable pour adapter les différents besoin d'un client à l'autre}
+\cvprojectitem{Front-end (Knockout)}{Développement de plusieurs composante \textit{responsive} et \textit{ré-utilisable} qui ont accéléré le développement et la stabilité}
+\cvprojectitem{C\#}{Conception d'un engin de règle dynamique. Cette fonctionnalité permet au clients de configurer des alerts selon des filtres avec des conditions selon certains événement dans le système}
+\cvprojectitem{C\#}{Pont de synchronisation de données entre deux systèmes. Les changements sauvegardés et sérialisés dans une BD secondaire puis exposé à l'autre système par un API sécurisé.}
 
+\vspace{1em}
 
-\begin{tabular*}{\linewidth}{p{\dimexpr 0.13\linewidth-1\tabcolsep }
-		p{\dimexpr 0.78\linewidth-1\tabcolsep }} 
-	
-	\textbf{Système de gestion pour FNCM} &  \vspace{-0.5em}
-	\begin{itemize}
-		
-		\item Modernisation de leur ancien système pour un nouveau en mode SAS. Le nouveau système devait avoir toute les fonctionnalitées de l'ancien, mais avec des améliorations de vitesse plus d'autres fonctionnalité 
-		\item Programmes Java utilisant  JPA et JDBC 
-	\end{itemize}
-	\\
-	\textbf{C++} & \vspace{-0.5em}
-	
-	\begin{itemize}
-		\item Jeu de \emph{snake}
-		\item Système interrogable prenant en input des données de location de personnes. Le temps d'éxécution du programme devait être optimisé. Implentation d'un Arbre-map
-		\item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
-	\end{itemize}
-	\\
-	\textbf{C} & \vspace{-0.5em}
-	
-	\begin{itemize}
-		\item Implémentation des fonctionnalités de la commande \emph{find} d'Unix
-		\item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
-	\end{itemize}
-	
-	
-\end{tabular*}
+\textbf{Système de gestion de fournisseur - Simetryk} (\href{https://simetryk.com/en/}{https://simetryk.com/en/})\newline{}
+\small{ Simetryk est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable de gestion centralisé de fournisseur.} \vspace{1em}\newline{} 
 
 
 \section{Compétence Informatique}
