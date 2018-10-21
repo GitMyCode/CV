@@ -63,8 +63,6 @@
 \newcolumntype{L}[1]{>{\raggedleft}p{#1}}
 \newcolumntype{R}[1]{>{\raggedright}p{#1}}
 %------------             FIN           -------------
-
-
 \newcommand{\cventry}[7][.25em]{}
 \renewcommand{\cventry}[7][.25em]{%
   \cvitem[#1]{#2}{%
@@ -156,15 +154,8 @@
 \end{tabular}%
 \vspace{-0.5em}
 }
-
-
-
-
-
-
 \long\def\/*#1*/{}
 \usepackage{pdfpages}
-
 
 %%%%%%%%%%%%%%  FIN New COMANDE  %%%%%%%%%%%%%% 
 
@@ -172,9 +163,9 @@
 
 
 
-%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
-%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
-%-------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- DEBUT DU DOCUMENT --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \begin{document}
 
 
@@ -201,8 +192,12 @@
 \end{table}
 
 
+
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- SOMMAIRE --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \section{Sommaire}
-{Informaticien en génie logiciel de formation, j'ai aussi fais un passage dans le domaines des arts visuels et de la criminologie. Durant mes temps libres j'aiguise mon savoir faire en algorithmie et j'ai des projets de  \textit{machine learning}}
+{Informaticien en génie logiciel de formation, j'ai aussi fais un passage dans le domaines des arts visuels et de la criminologie. Durant mes temps libres j'aiguise mon savoir faire en \textit{algorithmie} et \textit{machine learning}}
 \vspace{-1em}
 \section{Formation}
 
@@ -212,6 +207,9 @@
 \cventre{2010}{Certificat en Criminologie}{ Université de Montréal}{}{}
 \cventre{2008}{Attestation Études Cinématographiques}{École de Cinéma et de télévision de Québec}{}{}
 
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- EXPERIENCE PROFESSIONNELLE --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \section{Expérience Professionnelle}
 
 \cventre[1.3em]{2015}{Développeur full-stack}
@@ -230,6 +228,9 @@
 {Programmation de templates avec l'API de XpressDox. Cette API s'intègre avec Microsoft Word et automatise la génération de document. J'étais le seul qui s'avais utiliser Xpressdox dans l'entreprise.}
 {$\bullet$ Développer un framework $\bullet$ Proposer des solutions techniques aux besoins des avocats \newline{} $\bullet$ Trouver des solutions à des problèmes sans ressource}
 
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- Réalisation Technique --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \section{Réalisation Technique}
 \textbf{Système de gestion pour FNCM} \newline{}
 \small{Modernisation de leur ancien système pour un nouveau en mode SAS. Le nouveau système devait avoir toute les fonctionnalitées de l'ancien, mais avec des améliorations de vitesse plus d'autres fonctionnalité}
@@ -238,7 +239,6 @@
 \cvprojectitem{Front-end (Knockout)}{Mécanique d'édition et de d'annulation d'une modification.}
 \cvprojectitem{Front-end (Knockout)}{Développer une interface et une mécanique de recherche avancée.}
 \cvprojectitem{C\#, rdlc, Entity-Framework}{Développement de mécanismes de générations de rapport.}
-
 \vspace{1em}
 
 \textbf{SAS de gestion syndicale - Sentinelle} (\href{https://www.saisentinelle.ca/}{https://www.saisentinelle.ca/}) \newline
@@ -249,37 +249,20 @@
 \cvprojectitem{Front-end (Knockout)}{Développement de plusieurs composante \textit{responsive} et \textit{ré-utilisable} qui ont accéléré le développement et la stabilité}
 \cvprojectitem{C\#}{Conception d'un engin de règle dynamique. Cette fonctionnalité permet au clients de configurer des alerts selon des filtres avec des conditions selon certains événement dans le système}
 \cvprojectitem{C\#}{Pont de synchronisation de données entre deux systèmes. Les changements sauvegardés et sérialisés dans une BD secondaire puis exposé à l'autre système par un API sécurisé.}
-
 \vspace{1em}
 
 \textbf{Système de gestion de fournisseur - Simetryk} (\href{https://simetryk.com/en/}{https://simetryk.com/en/})\newline{}
 \small{ Simetryk est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable de gestion centralisé de fournisseur.} \vspace{1em}\newline{} 
 
+\textbf{Autres projets - Pour le plaisir} (\href{https://github.com/GitMyCode}{https://github.com/GitMyCode})\newline{}
+\small{ Plusieurs projets de programmation que j'ai fais dans mes temps libres.} \vspace{1em}\newline{} 
+\cvprojectitem{MineSweeper AI (Java)}{Un A.I qui résoud le jeu de minesweeper (\href{https://github.com/GitMyCode/MinesweeperAi}{https://github.com/GitMyCode/MinesweeperAi})}
+\cvprojectitem{CSGAMES 2016 (C\#)}{J'ai crée le défi que les participants devaient résoudre dans le cadre de la compétition algorithme des csgames de 2016 (\href{https://github.com/GitMyCode/csgames-algorithm-2016}{https://github.com/GitMyCode/csgames-algorithm-2016})}
+\textsl{}\newpage
 
-\section{Compétence Informatique}
-
-
-\cvdoubleitem{programmation:}{Java, Python, C/C++, Assembleur, BASH}
-			 { web:}{HTML/css/php/javascript, jQuery Mobile}
-\cvdoubleitem{cms:}
-			 {Apex, Django, Wordpress}{system:}{Windows, Linux}
-\cvdoubleitem{bd:}{MySQL, Oracle, SQL, PL/SQL}{génie:}{UML, Design Patterns, Agile, Git}
-
-\/*
-\begin{tabular}{ll}
-\textbf{Langages} & 
-html/css/php/javascript, jQuery Mobile, Apex, PL/SQL, C/C++, Java, Bash, Python,    Latex, Assembleur  \\
-\textbf{Génie} &
-UML, Design Patterns\\
-\textbf{BD} & MySQL, Oracle \\
-\textbf{CMS} & WordPress, Django \\
-\textbf{Systèmes} & Windows, Linux \\
-\textbf{IDE} & Eclipse, vim, SublimeText, Photoshop
-\end{tabular}
-*/
-
-
-\newpage
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- Travaux Pratiques --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \section{Travaux Pratiques}
 \begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
 						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
@@ -288,7 +271,6 @@ UML, Design Patterns\\
 
 \begin{tabular*}{\linewidth}{p{\dimexpr 0.13\linewidth-1\tabcolsep }
 						 	 p{\dimexpr 0.78\linewidth-1\tabcolsep }} 
-						 	 
 \textbf{Java} &  \vspace{-0.5em}
 \begin{itemize}
 
@@ -310,15 +292,14 @@ UML, Design Patterns\\
 \item Implémentation des fonctionnalités de la commande \emph{find} d'Unix
 \item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
 \end{itemize}
-
-
 \end{tabular*}
+*/
 
+\/*
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- Realisation Technique --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \section{Réalisation Technique}
-
-%\begin{itemize}\addtolength{\itemsep}{-.35\baselineskip}  
-%\item yo \item un autre
-%\end{itemize}
 \begin{tabular*}{\linewidth}{  
                    p{\dimexpr 0.33\linewidth-1\tabcolsep } 
                    p{\dimexpr 0.33\linewidth-1\tabcolsep }  
@@ -337,18 +318,16 @@ $\bullet$ \textbf{Site web}, \textsl{en construction} \par  \href{www.courspiano
 
 $\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} \par \small \href{https://class.coursera.org/android-001}{https://class.coursera.org/android-001}
 
-
 &$\bullet$ \textbf{Algorithms, Part I} \par \small \href{https://class.coursera.org/algs4partI-004}{https://class.coursera.org/algs4partI-004} 
-
 
 & \tabularnewline \\
 \vspace{-1.5em} Je suis présentement un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org
 
 & \vspace{-1.5em} Je suis présentement un cours sur les algorithmes et structures de données fondamentaux. C'est un cours en ligne donné par l'Université de Princeton via le site coursera.org
 
-
-
 \end{tabular*}   
+*/
+
 \section{Autres}
 \subsection{Activité}
 \begin{itemize}
