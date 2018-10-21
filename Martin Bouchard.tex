@@ -160,16 +160,10 @@
 %%%%%%%%%%%%%%  FIN New COMANDE  %%%%%%%%%%%%%% 
 
  \renewcommand\familydefault{\sfdefault}
-
-
-
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- DEBUT DU DOCUMENT --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
 \begin{document}
-
-
-
 \begin{table}[ht]
 \begin{minipage}[b]{0.74\textwidth}
 \begin{tabular}{l}
@@ -191,13 +185,12 @@
 \end{minipage}
 \end{table}
 
-
-
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- SOMMAIRE --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
 \section{Sommaire}
-{Informaticien en génie logiciel de formation, j'ai aussi fais un passage dans le domaines des arts visuels et de la criminologie. Durant mes temps libres j'aiguise mon savoir faire en \textit{algorithmie} et \textit{machine learning}}
+{Informaticien en génie logiciel de formation, j'ai aussi fais un passage dans le domaine des arts visuels et de la criminologie. 
+Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels impliquant de l'algorithmie, machine learning ou web.}
 \vspace{-1em}
 \section{Formation}
 
@@ -245,7 +238,7 @@
 \small{ Sentinelle est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable pour aider les syndicats de plusieurs domain dans la gestion de leur membres.}
 \begin{flushright}{\rmfamily\textsl{Technologies: C\#, Knockout, RavenDb}}\end{flushright}
 \vspace{1em}
-\cvprojectitem{BD Raven(NO SQL)}{Conceptualisé un schéma de base de donnée configurable pour adapter les différents besoin d'un client à l'autre}
+\cvprojectitem{BD Raven(NO SQL)}{Conceptualisé un schéma de base de donnée configurable. Cette application est multi-tenant et demandait donc une manière de configurer des environments selon les besoins uniques d'un client à l'autre}
 \cvprojectitem{Front-end (Knockout)}{Développement de plusieurs composante \textit{responsive} et \textit{ré-utilisable} qui ont accéléré le développement et la stabilité}
 \cvprojectitem{C\#}{Conception d'un engin de règle dynamique. Cette fonctionnalité permet au clients de configurer des alerts selon des filtres avec des conditions selon certains événement dans le système}
 \cvprojectitem{C\#}{Pont de synchronisation de données entre deux systèmes. Les changements sauvegardés et sérialisés dans une BD secondaire puis exposé à l'autre système par un API sécurisé.}
@@ -254,11 +247,32 @@
 \textbf{Système de gestion de fournisseur - Simetryk} (\href{https://simetryk.com/en/}{https://simetryk.com/en/})\newline{}
 \small{ Simetryk est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable de gestion centralisé de fournisseur.} \vspace{1em}\newline{} 
 
+\textbf{Portal de gestion de licenses - Sharegate} \newline
+\small{Un portal qui permet aux utilisateur d'avoir de l'information sur leur license ainsi que d'effectuer plusieurs manipulation.}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services}}\end{flushright}
+\vspace{1em}
+\cvprojectitem{Évolution de système legacy}{Ajouter de nouvelles règles d'affaires a un système legacy hautement critique. Cela à requis une approche methodique et itérative.}
+\cvprojectitem{Infrastructure, microservice, CI}{Monter une infratructure avec des environments de developpement (dev, qa, uat, prod) et de continuous integration avec \href{https://visualstudio.microsoft.com/team-services/}{\textit{VSTS}}}
+\vspace{1em}
+
+\textbf{Portal de ventes de licenses - Sharegate} \newline
+\small{Un portal qui permet a des revendeur de faires des quotes pour leur clients et vendre des licenses}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Sql/server, Azure Directory}}\end{flushright}
+\vspace{1em}
+\cvprojectitem{Event storming}{Afin de bien comprendre le besoin d'affaires et aligné les membres des différents département impliqués dans ce projet, nous avons utilisé la methologie de \textit{event storming}.}
+\cvprojectitem{Front-end (React)}{Je suis un des contributeurs principaux au développement front-end de ce projet. Supervise la qualité du code ainsi que les decisions critiques dans l'évolution de l'architecture}
+\cvprojectitem{Event sourcing}{Tout notre architecture back-end (de ce microservice) utilise les techniques du \textit{Event sourcing}. Cela nous donne l'avantage de maintenir un model très similaire à celui 
+qui a été discuté lors du \textit{Event storming}.}
+\vspace{1em}
+
 \textbf{Autres projets - Pour le plaisir} (\href{https://github.com/GitMyCode}{https://github.com/GitMyCode})\newline{}
 \small{ Plusieurs projets de programmation que j'ai fais dans mes temps libres.} \vspace{1em}\newline{} 
+\cvprojectitem{Application mobile (React-Native)}{Je travail présentement au développement d'une app mobile. Je suis en collaboration avec deux cardiologue qui écrivent le contenu. C'est une application qui permettra aux medecins d'avoir de l'information specialisé. 
+Le contenu est écrit en \textit{markdown} qui est ensuite converti en react-native automatiquement.}
 \cvprojectitem{MineSweeper AI (Java)}{Un A.I qui résoud le jeu de minesweeper (\href{https://github.com/GitMyCode/MinesweeperAi}{https://github.com/GitMyCode/MinesweeperAi})}
 \cvprojectitem{CSGAMES 2016 (C\#)}{J'ai crée le défi que les participants devaient résoudre dans le cadre de la compétition algorithme des csgames de 2016 (\href{https://github.com/GitMyCode/csgames-algorithm-2016}{https://github.com/GitMyCode/csgames-algorithm-2016})}
-\textsl{}\newpage
+\textsl{}
+\newpage
 
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- Travaux Pratiques --------------------------------------------------%
@@ -293,7 +307,7 @@
 \item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
 \end{itemize}
 \end{tabular*}
-*/
+
 
 \/*
 %-----------------------------------------------------------------------------------------------------------------------%
