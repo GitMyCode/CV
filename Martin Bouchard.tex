@@ -133,13 +133,20 @@
 }}
 
 %cvprojectitem----------------------------------
-\newcommand{\cvprojectitem}[3][0.5em]{
+\newcommand{\cvprojectitem}[3][0.3em]{
 	\noindent\begin{tabular*}{\linewidth}{p{\dimexpr 0.20\linewidth-1\tabcolsep }
 		p{\dimexpr 0.80\linewidth-1\tabcolsep }} 
 	\fontsize{8}{9}\textit{#2} & \small{#3} \vspace{0.3em}\\
 \end{tabular*}%
 	\vspace{-1em}\par\addvspace{#1}  }
 
+%descriptionterm----------------------------------
+\newcommand{\cvdescriptionterm}[3][0.5em]{
+	\noindent\begin{tabular*}{\linewidth}{p{\dimexpr 0.10\linewidth-1\tabcolsep }
+		p{\dimexpr 0.80\linewidth-1\tabcolsep }} 
+  \fontsize{8}{9}{{\hfill}\bfseries{#2}:} &\small{#3} \vspace{0.3em}\\
+\end{tabular*}%
+	\vspace{-1em}\par\addvspace{#1}  }
 
 %SUBSECTION----------------------------------
 \def\middleline{
@@ -242,13 +249,16 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 \cvprojectitem{C\#}{Conception d'un engin de règle dynamique. Cette fonctionnalité permet au clients de configurer des alerts selon des filtres avec des conditions selon certains événement dans le système}
 \cvprojectitem{C\#}{Pont de synchronisation de données entre deux systèmes. Les changements sauvegardés et sérialisés dans une BD secondaire puis exposé à l'autre système par un API sécurisé.}
 \vspace{1em}
-
+\newpage
 \textbf{Système de gestion de fournisseur - Simetryk} (\href{https://simetryk.com/en/}{https://simetryk.com/en/})\newline{}
-\small{ Simetryk est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable de gestion centralisé de fournisseur.} \vspace{1em}\newline{} 
-
+\small{ Simetryk est une plateforme \textit{SAS} \textit{multi-tetant} et personnalisable de gestion centralisé de fournisseur.} 
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, Knockout, RavenDb, Azure}}\end{flushright}
+\vspace{1em}
+\cvprojectitem{Conception}{Élaboration et mise en place d'un \textit{content creation interface}. Un administrateur devait pouvoir créer des formulaires et des champs d'entré de données avec des régles de validations configurables (similaire à un \textit{CMS})}
+\vspace{1em}
 \textbf{Portal de gestion de licenses - Sharegate} \newline
 \small{Un portal qui permet aux utilisateurs d'avoir de l'information sur leur license ainsi que d'y effectuer plusieurs manipulation.}
-\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services}}\end{flushright}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Salesforce Apex}}\end{flushright}
 \vspace{1em}
 \cvprojectitem{Évolution de système legacy}{Ajouter de nouvelles règles d'affaires a un système legacy hautement critique. Cela à requis une approche methodique et itérative.}
 \cvprojectitem{Infrastructure, microservice, CI}{Monter une infratructure avec des environments de developpement (dev, qa, uat, prod) et de \textit{continuous integration} avec \href{https://visualstudio.microsoft.com/team-services/}{\textit{VSTS}}}
@@ -256,12 +266,11 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 
 \textbf{Portal de ventes de licenses - Sharegate} \newline
 \small{Un portal qui permet à des revendeurs de faires des quotes pour leur clients et vendre des licenses}
-\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Sql/server, Azure Directory}}\end{flushright}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Sql/server, Azure Directory, Salesforce Apex}}\end{flushright}
 \vspace{1em}
 \cvprojectitem{Event storming}{Afin de bien comprendre le besoin d'affaires et aligné les membres des différents département impliqués dans ce projet, nous avons utilisé la methologie de \textit{event storming}.}
-\cvprojectitem{Front-end (React)}{Je suis un des contributeurs principaux au développement front-end de ce projet. Supervise la qualité du code ainsi que les decisions critiques dans l'évolution de l'architecture}
-\cvprojectitem{Event sourcing}{Tout notre architecture back-end (de ce microservice) utilise les techniques du \textit{Event sourcing}. Cela nous donne l'avantage de maintenir un model très similaire à celui 
-qui a été discuté lors du \textit{Event storming}.}
+\cvprojectitem{Front-end (React)}{Un des contributeurs principaux au développement front-end. Supervise la qualité du code ainsi que les decisions critiques dans l'évolution de l'architecture}
+\cvprojectitem{Event sourcing}{Tout notre architecture back-end (de ce microservice) utilise les techniques du \textit{Event sourcing}. Cela nous donne l'avantage de maintenir un model très similaire à celui qui a été discuté lors du \textit{Event storming}.}
 \vspace{1em}
 
 \textbf{Autres projets - Pour le plaisir} (\href{https://github.com/GitMyCode}{https://github.com/GitMyCode})\newline{}
@@ -275,84 +284,92 @@ Le contenu est écrit en \textit{markdown} qui est ensuite converti en react-nat
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- Travaux Pratiques --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
-\section{Travaux Pratiques}
-\begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
-						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
-\centering\textbf{\underline{Langage}} &\centering\textbf{\underline{Description}}
-\end{tabular*}
+% \section{Travaux Pratiques}
+% \begin{tabular*}{\textwidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
+% 						 	 p{\dimexpr 0.65\linewidth-1\tabcolsep }} 
+% \centering\textbf{\underline{Langage}} &\centering\textbf{\underline{Description}}
+% \end{tabular*}
 
-\begin{tabular*}{\linewidth}{p{\dimexpr 0.13\linewidth-1\tabcolsep }
-						 	 p{\dimexpr 0.78\linewidth-1\tabcolsep }} 
-\textbf{Java} &  \vspace{-0.5em}
-\begin{itemize}
+% \begin{tabular*}{\linewidth}{p{\dimexpr 0.13\linewidth-1\tabcolsep }
+% 						 	 p{\dimexpr 0.78\linewidth-1\tabcolsep }} 
+% \textbf{Java} &  \vspace{-0.5em}
+% \begin{itemize}
 
-\item Système de gestion d'employés et d'horaires. Modélisation orientée objet et héritage multiple
-\item Programmes Java utilisant  JPA et JDBC 
-\end{itemize}
-\\
-\textbf{C++} & \vspace{-0.5em}
+% \item Système de gestion d'employés et d'horaires. Modélisation orientée objet et héritage multiple
+% \item Programmes Java utilisant  JPA et JDBC 
+% \end{itemize}
+% \\
+% \textbf{C++} & \vspace{-0.5em}
 
-\begin{itemize}
-\item Jeu de \emph{snake}
-\item Système interrogable prenant en input des données de location de personnes. Le temps d'éxécution du programme devait être optimisé. Implentation d'un Arbre-map
-\item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
-\end{itemize}
-\\
-\textbf{C} & \vspace{-0.5em}
+% \begin{itemize}
+% \item Jeu de \emph{snake}
+% \item Système interrogable prenant en input des données de location de personnes. Le temps d'éxécution du programme devait être optimisé. Implentation d'un Arbre-map
+% \item Système de recherche dans un Graph. Implentation de l'algorythme de Tarjan et Dijkstra
+% \end{itemize}
+% \\
+% \textbf{C} & \vspace{-0.5em}
 
-\begin{itemize}
-\item Implémentation des fonctionnalités de la commande \emph{find} d'Unix
-\item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
-\end{itemize}
-\end{tabular*}
-
-
+% \begin{itemize}
+% \item Implémentation des fonctionnalités de la commande \emph{find} d'Unix
+% \item Simulation de l'algorithme de remplacement des pages (Optimial, Horloge, LRU). Conception d'un tableau dynamique 2 dimmensions.
+% \end{itemize}
+% \end{tabular*}
 \/*
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- Realisation Technique --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
-\section{Réalisation Technique}
-\begin{tabular*}{\linewidth}{  
-                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
-                   p{\dimexpr 0.33\linewidth-1\tabcolsep }  
-                   p{\dimexpr 0.33\linewidth-1\tabcolsep } 
-                   } 
-$\bullet$ \textbf{Site web}, \textsl{en construction} \par  \href{www.courspiano.ca}{www.courspiano.ca} 
+% \section{Réalisation Technique}
+% \begin{tabular*}{\linewidth}{  
+%                    p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+%                    p{\dimexpr 0.33\linewidth-1\tabcolsep }  
+%                    p{\dimexpr 0.33\linewidth-1\tabcolsep } 
+%                    } 
+% $\bullet$ \textbf{Site web}, \textsl{en construction} \par  \href{www.courspiano.ca}{www.courspiano.ca} 
 
-&$\bullet$ \textbf{Site web}, \textsl{en construction} \par \small\href{http://coursmusique.codefaction.webfactional.com}{coursmusique.codefaction.webfactional.com}
-&$\bullet$ \textbf{Encefal}, \textsl{projet en collaboration} \par \href{http://foireauxlivres.uqam.ca/}{http://foireauxlivres.uqam.ca/} \tabularnewline \\
+% &$\bullet$ \textbf{Site web}, \textsl{en construction} \par \small\href{http://coursmusique.codefaction.webfactional.com}{coursmusique.codefaction.webfactional.com}
+% &$\bullet$ \textbf{Encefal}, \textsl{projet en collaboration} \par \href{http://foireauxlivres.uqam.ca/}{http://foireauxlivres.uqam.ca/} \tabularnewline \\
 
 
-\vspace{-1.4em}Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress
-& \vspace{-1.5em} Un site designé sur photoshop et transposé en html/css. Le back-end est fait sur la plateforme Django  
-&\vspace{-1.5em} La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants. La plateforme est Django. 
-\tabularnewline \\
+% \vspace{-1.4em}Un site construit sur la plateforme Wordpress. Design fait sur photoshop puis realisé en theme-wordpress
+% & \vspace{-1.5em} Un site designé sur photoshop et transposé en html/css. Le back-end est fait sur la plateforme Django  
+% &\vspace{-1.5em} La foire aux livres permet aux etudiants de vendre leurs livres à d'autres étudiants. La plateforme est Django. 
+% \tabularnewline \\
 
-$\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} \par \small \href{https://class.coursera.org/android-001}{https://class.coursera.org/android-001}
+% $\bullet$ \textbf{Programming Mobile Applications for Android Handheld Systems} \par \small \href{https://class.coursera.org/android-001}{https://class.coursera.org/android-001}
 
-&$\bullet$ \textbf{Algorithms, Part I} \par \small \href{https://class.coursera.org/algs4partI-004}{https://class.coursera.org/algs4partI-004} 
+% &$\bullet$ \textbf{Algorithms, Part I} \par \small \href{https://class.coursera.org/algs4partI-004}{https://class.coursera.org/algs4partI-004} 
 
-& \tabularnewline \\
-\vspace{-1.5em} Je suis présentement un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org
+% & \tabularnewline \\
+% \vspace{-1.5em} Je suis présentement un cours de développement sur la plateforme Android. C'est un cours en ligne donné par l'Université du Maryland via le site coursera.org
 
-& \vspace{-1.5em} Je suis présentement un cours sur les algorithmes et structures de données fondamentaux. C'est un cours en ligne donné par l'Université de Princeton via le site coursera.org
+% & \vspace{-1.5em} Je suis présentement un cours sur les algorithmes et structures de données fondamentaux. C'est un cours en ligne donné par l'Université de Princeton via le site coursera.org
 
-\end{tabular*}   
+% \end{tabular*}   
 */
 
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- Langage et technologies --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
+\section{Langages et technologies}
+\cvdescriptionterm{Human}{Français langue maternelle et anglais courant}
+\cvdescriptionterm{Langage}{c\#, Java, scala, javascript es6, Python, ruby, Salesforce Apex, Latex}
+\cvdescriptionterm{Framework}{React, Asp.net, Rails, Wordpress, Knockout}
+\cvdescriptionterm{Mobile}{React-Native, Android}
+\cvdescriptionterm{VCS}{Git}
+\cvdescriptionterm{Server}{Node, IIS}
+\cvdescriptionterm{Database}{Sql server, RavenDb}
+
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- Autre --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
 \section{Autres}
 \subsection{Activité}
 \begin{itemize}
 
-\item[$\bullet$]Bénévolat au CSJR (Centre de Service de Justice Reparatrice)
+\item Je joue le plus souvent possible au soccer
+\item Bénévolat au CSJR (Centre de Service de Justice Reparatrice)
 \item Bénévolat comme caméraman à Télémag
 \end{itemize}
-\subsection{Langue}
-\begin{itemize}
-\item[$\bullet$] Français langue maternelle 
-\item Anglais fonctionnel
-\end{itemize}
-
 \subsection{Intérêt}
 \begin{itemize}
 \item Graphisme: Grand intérêt pour le design web.
