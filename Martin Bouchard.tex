@@ -142,7 +142,7 @@
 
 %descriptionterm----------------------------------
 \newcommand{\cvdescriptionterm}[3][0.5em]{
-	\noindent\begin{tabular*}{\linewidth}{p{\dimexpr 0.10\linewidth-1\tabcolsep }
+	\noindent\begin{tabular*}{\linewidth}{p{\dimexpr 0.15\linewidth-1\tabcolsep }
 		p{\dimexpr 0.80\linewidth-1\tabcolsep }} 
   \fontsize{8}{9}{{\hfill}\bfseries{#2}:} &\small{#3} \vspace{0.3em}\\
 \end{tabular*}%
@@ -215,12 +215,12 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 \cventre[1.3em]{2015}{Développeur full-stack}
 {GSOFT}
 {Travail en mode agile sur plusieurs projets avec des équipes de 2 à 6 développeurs. Responsable de l'architecture de plusieurs fonctionnalités et impliqué dans la conception de beaucoup d'autres autant front-end que back-end. }
-{$\bullet$ Agile  $\bullet$ Conception d'API $\bullet$ SQL Server $\bullet$ RavenDB (non relationnelle) $\bullet$ Microsoft Azure $\bullet$ Architecture d'application sous forme de service $\bullet$ Relation direct avec les clients }
+{$\bullet$ Agile/Scrum $\bullet$ Relation direct avec les clients $\bullet$ Conception d'API $\bullet$ Microservices $\bullet$ Microsoft Azure \newline{} $\bullet$ Impliqué dans le cycle complet d'un logiciel: conception, développement, support/évolution}
 
 \cventre[1.3em]{2013}{Stagiaire}
 {Ville de Montréal}
 {Conception d'applications d'affaires sur la plateforme de développement web Apex de Oracle.}
-{$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end (Apex) de page web \\$\bullet$ Conception de schema bd  $\bullet$ Intégration avec LDAP $\bullet$ Architecture d'application sous forme de service}
+{$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end (Apex) de page web \\$\bullet$ Écrire de la documentation et recommendations sur des choix technologiques }
 
 \cventre[1.3em]{2012}{Développeur}
 {Fasken Martineau DuMoulin, S.E.N.C.R.L}
@@ -232,12 +232,12 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 %-----------------------------------------------------------------------------------------------------------------------%
 \section{Réalisation Technique}
 \textbf{Système de gestion pour FNCM} \newline{}
-\small{Modernisation de leur ancien système pour un nouveau en mode SAS. Le nouveau système devait avoir toute les fonctionnalitées de l'ancien, mais avec des améliorations de vitesse plus d'autres fonctionnalitées}
+\small{Modernisation d'un ancien système pour un nouveau en mode SAS. Améliorations du système legacy sans perdre les fonctionnalitées existantes}
 \begin{flushright}{\rmfamily\textsl{Technologies: C\#, Knockout, SQL server, Entity framework}}\end{flushright}
 \cvprojectitem{BD (SQL)}{Scriptes de migration sql complexe afin d'optimiser certaines mise-à-jour dont la performance était importante.}
 \cvprojectitem{Front-end (Knockout)}{Mécanique d'édition et de d'annulation d'une modification.}
 \cvprojectitem{Front-end (Knockout)}{Développer une interface et une mécanique de recherche avancée.}
-\cvprojectitem{C\#, rdlc, Entity-Framework}{Développement de mécanismes de générations de rapports qui sont utilisés pour faire de la comptabilité.}
+\cvprojectitem{C\#, rdlc, Entity-Framework}{Développement de mécanismes de générations de rapports utilisés pour faire de la comptabilité.}
 \vspace{1em}
 
 \textbf{SAS de gestion syndicale - Sentinelle} (\href{https://www.saisentinelle.ca/}{https://www.saisentinelle.ca/}) \newline
@@ -258,11 +258,12 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 \vspace{1em}
 
 \textbf{Maintenance et évolution de système lecagy critique - Sharegate} \newline
-\small{Un portail qui permet aux utilisateurs d'avoir de l'information sur leur license ainsi que d'y effectuer plusieurs manipulations.}
+\small{Maintient et évolution d'un système de license d'un produit ainsi que de son integration avec Salesforce}
 \begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Salesforce Apex}}\end{flushright}
 \vspace{1em}
 \cvprojectitem{Performance}{Ajout d'une couche de \textit{caching} qui a donné des gains majeurs de performances}
 \cvprojectitem{Logging/Maintenance}{Investiguation et correction d'un problème qui a nécessité des changements à la grandeur du système. Après le changement il y a eu une reduction de plus de 20,000 erreurs par jour}
+\cvprojectitem{Salesforce Apex, Integration, Azure WebJob}{Pont de synchronisation entre une base de données Sql-server et Salesforce. Architecture événementielle qui utilise azure webjob}
 \vspace{1em}
 
 \textbf{Portail de gestion de licenses - Sharegate} \newline
@@ -275,7 +276,7 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 
 \textbf{Portail de ventes de licenses - Sharegate} \newline
 \small{Un portail qui permet à des revendeurs de faires des quotes pour leur clients et vendre des licenses}
-\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Sql/server, Azure Directory, Salesforce Apex}}\end{flushright}
+\begin{flushright}{\rmfamily\textsl{Technologies: C\#/Asp.net, React, Micro-services, Sql/server, Entity framework, Azure Directory, Salesforce Apex}}\end{flushright}
 \vspace{1em}
 \cvprojectitem{Event storming}{Afin de bien comprendre le besoin d'affaires et aligner les membres des différents départements engagés dans ce projet, nous avons utilisé la methologie de \textit{event storming}.}
 \cvprojectitem{Front-end (React)}{Un des contributeurs principaux au développement front-end. Supervise la qualité du code ainsi que les decisions critiques dans l'évolution de l'architecture}
@@ -288,8 +289,6 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 Le contenu est écrit en \textit{markdown} qui est ensuite converti en react-native automatiquement.}
 \cvprojectitem{MineSweeper AI (Java)}{Un A.I qui résoud le jeu de minesweeper (\href{https://github.com/GitMyCode/MinesweeperAi}{https://github.com/GitMyCode/MinesweeperAi})}
 \cvprojectitem{CSGAMES 2016 (C\#)}{J'ai crée le défi que les participants devaient résoudre dans le cadre de la compétition algorithme des csgames de 2016 (\href{https://github.com/GitMyCode/csgames-algorithm-2016}{https://github.com/GitMyCode/csgames-algorithm-2016})}
-\textsl{}
-
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- Travaux Pratiques --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
@@ -360,7 +359,8 @@ Le contenu est écrit en \textit{markdown} qui est ensuite converti en react-nat
 %-------------------------------------------------- Langage et technologies --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
 \section{Langages et technologies}
-\cvdescriptionterm{Human}{Français langue maternelle et anglais courant}
+\cvdescriptionterm{Humain}{Français langue maternelle et anglais courant}
+\cvdescriptionterm{Architecture}{Event Sourcing, Domain Driven Design, CQRS, Layer Architecture}
 \cvdescriptionterm{Langage}{c\#, Java, scala, javascript es6, Python, ruby, Salesforce Apex, Latex}
 \cvdescriptionterm{Framework}{React, Asp.net, Rails, Wordpress, Knockout}
 \cvdescriptionterm{Mobile}{React-Native, Android}
