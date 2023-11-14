@@ -2,37 +2,60 @@
 % Style casual en orange
 % Article complet : http://blog.madrzejewski.com/creer-cv-elegant-latex-moderncv/
 
-\documentclass[a4paper,9pt]{extarticle}
-%\documentclass[11pt,a4paper]{moderncv}
 
-%\usepackage{fourier-orns} \Huge\hrulefill\hspace{0.2cm} \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
-%\usepackage{fancyhdr} \pagestyle{fancy}  \lhead{\hrule \vbox to 10pt{\vrule height 05pt width 1pt} LEFT}
+\documentclass[a4paper,9pt]{extarticle}
 
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
-%\inputencoding{latin1} % important pour les carathere francais
 
 \usepackage[left=1cm,right=1.5cm,top=1.5cm,bottom=0.5cm]{geometry}
-%\usepackage[top=2.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
 
-% Largeur de la colonne pour les dates
-%A Few Useful Packages
-%\usepackage{marvosym}\textsc{\textsc{}}
-\usepackage{fontspec} 					%for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
-\RequirePackage{color,graphicx}
+\usepackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-%\usepackage[big]{layaureo} 				%better formatting of the A4 page
-% an alternative to Layaureo can be ** \usepackage{fullpage} **
-%\usepackage{supertabular} 				%for Grades
-\usepackage{titlesec}					%custom \section
-\usepackage{ifthen} % pour les ifthenelse
-\usepackage{pbox} % pour faire un \\ dans une cellule
-\usepackage{setspace} % pour les begin{spacing}{0/7}
 
-\usepackage{mathptmx}
-%\usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{setspace}
+
+\usepackage{lmodern} % Replacing fontspec with lmodern
 \usepackage[T1]{fontenc}
+
+% Other packages and your custom commands follow here...
+
+
+
+% \documentclass[a4paper,9pt]{extarticle}
+% %\documentclass[11pt,a4paper]{moderncv}
+
+% %\usepackage{fourier-orns} \Huge\hrulefill\hspace{0.2cm} \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
+% %\usepackage{fancyhdr} \pagestyle{fancy}  \lhead{\hrule \vbox to 10pt{\vrule height 05pt width 1pt} LEFT}
+
+% \usepackage[utf8]{inputenc}
+% \usepackage[french]{babel}
+% %\inputencoding{latin1} % important pour les carathere francais
+
+% \usepackage[left=1cm,right=1.5cm,top=1.5cm,bottom=0.5cm]{geometry}
+% %\usepackage[top=2.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
+
+% % Largeur de la colonne pour les dates
+% %A Few Useful Packages
+% %\usepackage{marvosym}\textsc{\textsc{}}
+% \usepackage{fontspec} 					%for loading fonts
+% \usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+% \RequirePackage{color,graphicx}
+% \usepackage[usenames,dvipsnames]{xcolor}
+% %\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% % an alternative to Layaureo can be ** \usepackage{fullpage} **
+% %\usepackage{supertabular} 				%for Grades
+% \usepackage{titlesec}					%custom \section
+% \usepackage{ifthen} % pour les ifthenelse
+% \usepackage{pbox} % pour faire un \\ dans une cellule
+% \usepackage{setspace} % pour les begin{spacing}{0/7}
+
+% \usepackage{mathptmx}
+% %\usepackage{lmodern}
+% \usepackage[T1]{fontenc}
 
 
 %-----------Font
