@@ -2,8 +2,7 @@
 % Style casual en orange
 % Article complet : http://blog.madrzejewski.com/creer-cv-elegant-latex-moderncv/
 
-
-\documentclass[a4paper,9pt]{extarticle}
+\documentclass[a4paper,11pt]{extarticle} 
 
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -17,9 +16,22 @@
 \usepackage{ifthen}
 \usepackage{pbox}
 \usepackage{setspace}
+\singlespacing % 1.2 line spacing
+
+\setlength{\parskip}{1em} % Space between paragraphs
+
+\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt} % Spacing around sections
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=0.5em, topsep=0.5em} % Spacing for itemize
 
 \usepackage{lmodern} % Replacing fontspec with lmodern
 \usepackage[T1]{fontenc}
+
+% Continue with your document...
+
+
+% Other packages and content...
 
 % Other packages and your custom commands follow here...
 
@@ -116,7 +128,7 @@
 %-----------FIN def lenght
 
 
-% Styles
+% Styleshttps://www.overleaf.com/project/6552e3f9c1181d4d521035b8
 \newcommand{\hintfont}{}
 \newcommand{\indicestyle}[1]{\slshape\textcolor{color0}{#1}}
 
@@ -150,10 +162,15 @@
 	{\bfseries #3}%
 	\ifthenelse{\equal{#4}{}}{}{, {\slshape #4}}\strut%
 	\ifx&#5&
-	    \else{\vspace{-0.1em}\newline{}\begin{minipage}[t]{\linewidth}\begin{spacing}{0.8}\small #5 \end{spacing} \end{minipage}}\fi
+	  \else{
+     \newline{}#5 
+    }\fi
 	\ifx&#6&
-	    \else{\vspace{-0.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}\fi
+        \else
+        {\vspace{.5em}\newline{} \hspace*{1.7em}\begin{minipage}[t]{\linewidth}\small\upshape #6 \end{minipage}}
+\fi
 }}
+
 
 %cvprojectitem----------------------------------
 \newcommand{\cvprojectitem}[3][0.3em]{
@@ -204,7 +221,7 @@
 \end{minipage}
 \hspace{0.5cm}
 \noindent
-\begin{minipage}[b]{0.25\textwidth}\raggedright
+\begin{minipage}[b]{0.15\textwidth}\raggedright
 \begin{tabular}{|r}
 \\
   \textit{3509 rue Wellington}  \\
@@ -214,14 +231,42 @@
 \end{tabular}
 \end{minipage}
 \end{table}
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- SUMMARY --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
+\section{Summary}
+{Since beginning my programming journey in 2011 and turning professional in 2014, I have specialized in C\# .NET while diversifying my expertise in Java and React. I am constantly engaged in side projects, expanding my knowledge in new architectures and methodologies.}
+\vspace{-1em}
 
 %-----------------------------------------------------------------------------------------------------------------------%
-%-------------------------------------------------- SOMMAIRE --------------------------------------------------%
+%-------------------------------------------------- PROFESSIONAL EXPERIENCE --------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------%
-\section{Sommaire}
-{Informaticien en génie logiciel de formation, j'ai aussi fait un passage dans le domaine des arts visuels et de la criminologie. 
-Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels impliquant de l'algorithmie, machine learning ou web.}
-\vspace{-1em}
+\section{Professional Experience}
+
+\cventre[1.3em]{March 2015 - December 2019}{Full-stack Developer}
+{GSOFT}
+{Worked in agile mode on several projects with teams of 2 to 6 developers. Responsible for the architecture of several features and involved in the design of many others, both front-end and back-end. }
+{$\bullet$ Agile/Scrum $\bullet$ Direct client relations $\bullet$ API Design $\bullet$ Microservices $\bullet$ Microsoft Azure \newline{} $\bullet$ Involved in the complete software cycle: design, development, support/evolution}
+
+\cventre[1.3em]{Apr. 2014 – Aug. 2014}{Intern Developer}
+{Telica Software Inc.}
+{I was a full-stack developer on a web application made with Ruby on Rails}
+{}
+
+\cventre[1.3em]{May 2013 – Sept. 2013}{Intern Developer}
+{City of Montreal}
+{Design of business applications on the Oracle Apex web development platform.}
+{$\bullet$ User interface design $\bullet$ Front-end and back-end programming (Apex) of web pages \\$\bullet$ Writing documentation and recommendations on technological choices}
+
+\cventre[1.3em]{2012}{Developer}
+{Fasken Martineau DuMoulin, LLP}
+{Programming templates with the XpressDox API. This API integrates with Microsoft Word and automates document generation. I was the only one who knew how to use XpressDox in the company.}
+{$\bullet$ Develop a framework and development tools $\bullet$ Propose solutions to lawyers' needs \newline{}}
+
+%-----------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------- FORMATION  --------------------------------------------------%
+%-----------------------------------------------------------------------------------------------------------------------%
+
 \section{Formation}
 
 \cventre{2017}{Deep Learning NanoDegree}{Udacity}{https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101}{}
@@ -229,30 +274,6 @@ Durant mes temps libres j'aiguise mon savoir faire dans des projets personnels i
 \cventre{2011-2014}{Baccalauréat informatique}{Université du Québec à Montréal}{}{}
 \cventre{2010}{Certificat en Criminologie}{ Université de Montréal}{}{}
 \cventre{2008}{Attestation Études Cinématographiques}{École de Cinéma et de télévision de Québec}{}{}
-
-%-----------------------------------------------------------------------------------------------------------------------%
-%-------------------------------------------------- EXPERIENCE PROFESSIONNELLE --------------------------------------------------%
-%-----------------------------------------------------------------------------------------------------------------------%
-\section{Expérience Professionnelle}
-
-\cventre[1.3em]{mars 2015 - Aujourd'hui}{Développeur full-stack}
-{GSOFT}
-{Travail en mode agile sur plusieurs projets avec des équipes de 2 à 6 développeurs. Responsable de l'architecture de plusieurs fonctionnalités et impliqué dans la conception de beaucoup d'autres autant front-end que back-end. }
-{$\bullet$ Agile/Scrum $\bullet$ Relation direct avec les clients $\bullet$ Conception d'API $\bullet$ Microservices $\bullet$ Microsoft Azure \newline{} $\bullet$ Impliqué dans le cycle complet d'un logiciel: conception, développement, support/évolution}
-
-\cventre[1.3em]{avr. 2014 – août 2014}{Développeur Stagiaire}
-{Telica Software inc.}
-{J'etais développeur fullstack sur une application web fait avec Ruby on Rails}
-
-\cventre[1.3em]{mai 2013 – sept. 2013}{Développeur Stagiaire}
-{Ville de Montréal}
-{Conception d'applications d'affaires sur la plateforme de développement web Apex de Oracle.}
-{$\bullet$ Design d'interface utilisateur  $\bullet$ Programmation front-end et back-end (Apex) de page web \\$\bullet$ Écrire de la documentation et recommendations sur des choix technologiques }
-
-\cventre[1.3em]{2012}{Développeur}
-{Fasken Martineau DuMoulin, S.E.N.C.R.L}
-{Programmation de templates avec l'API de XpressDox. Cette API s'intègre avec Microsoft Word et automatise la génération de document. J'étais le seul qui savais utiliser Xpressdox dans l'entreprise.}
-{$\bullet$ Développer un framework et outils de développement $\bullet$ Proposer des solutions aux besoins des avocats \newline{}}
 
 %-----------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------- Réalisation Technique --------------------------------------------------%
